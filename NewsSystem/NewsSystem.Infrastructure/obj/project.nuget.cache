@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0VfDQRZyM583uX3AoK/hfBeLI7oNCf6nyoXWW3g2B+SLOPV1JP7dlgUT84gO3u5W320hkHjncES01douMiu9MQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Infrastructure\\NewsSystem.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sekul\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.7\\microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512",
+    "C:\\Users\\sekul\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
