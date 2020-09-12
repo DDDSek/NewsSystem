@@ -1,4 +1,4 @@
-﻿namespace NewsSystem.Domain.Models.Article
+﻿namespace NewsSystem.Domain.Models.CreateArticle.Article
 {
     using Common;
     using Exceptions;

@@ -32,5 +32,18 @@
             public const int MinNameLength = 3;
             public const int MaxNameLength = 12;
         }
+
+        public class PhoneNumber
+        {
+            public const int MinPhoneNumberLength = 5;
+            public const int MaxPhoneNumberLength = 20;
+            public const string PhoneNumberRegularExpression = @"\+[0-9]*";
+        }
+
+        public class DateRange
+        {
+            public const int MinNumberOfSeats = 2;
+            public const int MaxNumberOfSeats = 50;
+        }
     }
 }

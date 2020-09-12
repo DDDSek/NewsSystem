@@ -1,4 +1,4 @@
-﻿namespace NewsSystem.Domain.Models.Article
+﻿namespace NewsSystem.Domain.Models.CreateArticle.Article
 {
     using System;
     using System.Collections.Generic;
@@ -94,7 +94,7 @@
             DateTime lastModify,
             DateTime deletedOn)
         {
-            this.DateRange = new DateRange(lastModify, deletedOn);
+            this.DateRange = new DateRange(lastModify, deletedOn, deletedOn);
 
             return this;
         }
