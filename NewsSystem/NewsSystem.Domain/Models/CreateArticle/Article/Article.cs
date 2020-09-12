@@ -5,7 +5,7 @@
     using System.Linq;
 
     using Common;
-    using Exceptions;
+    using Exceptions; 
 
     using static ModelConstants.Article;
 
@@ -21,7 +21,7 @@
             Comment comment,
             string imageUrl,
             DateRange dateRange,
-            Visibility visibility,
+            ArticlePriority articlePriority,
             Status status
             )
         {
@@ -33,23 +33,25 @@
             this.Category = category;
             this.ImageUrl = imageUrl;
             this.DateRange = dateRange;
-            this.Visibility = visibility;
+            this.ArticlePriority = articlePriority;
             this.Status = status;
         }
 
         private Article(
             string title,
-            string content, 
+            string content,
+            Comment comment,
             string imageUrl,
             DateRange dateRange)
         {
             this.Title = title;
             this.Content = content;
+            this.Comment = comment;
             this.ImageUrl = imageUrl;
             this.DateRange = dateRange;
 
             this.Category = default!;
-            this.Visibility = default!;
+            this.ArticlePriority = default!;
             this.Status = default!;
         }
 
@@ -63,7 +65,7 @@
 
         public DateRange DateRange { get; private set; }
 
-        public Visibility Visibility { get; private set; }
+        public ArticlePriority ArticlePriority { get; private set; }
 
         public Status Status { get; private set; }
 
@@ -95,16 +97,6 @@
             DateTime deletedOn)
         {
             this.DateRange = new DateRange(lastModify, deletedOn, deletedOn);
-
-            return this;
-        }
-
-        public Article UpdateVisibility(
-            bool approved,
-            bool deleted,
-            ArticlePriority articlePriority)
-        {
-            this.Visibility = new Visibility(approved, deleted, articlePriority);
 
             return this;
         }
