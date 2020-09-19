@@ -1,10 +1,11 @@
 ﻿namespace NewsSystem.Infrastructure.Identity
 {
-    using Application.Features.Identity;
-    using Domain.Exceptions;
-    using Domain.Models;
     using Microsoft.AspNetCore.Identity;
-    using Domain.Models.Journalist;
+
+    using Application.Identity;
+
+    using Domain.Exceptions;
+    using Domain.ArticleCreation.Models.Journalists;
 
     public class User : IdentityUser, IUser
     {
@@ -12,13 +13,15 @@
             : base(email)
             => this.Email = email;
 
+        public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly();
+
         public Journalist? Journalist { get; private set; }
 
         public void BecomeJournalist(Journalist journalist)
         {
             if (this.Journalist != null)
             {
-                throw new InvalidJournalistException($"User '{this.UserName}' is already a dealer.");
+                throw new InvalidJournalistException($"User '{this.UserName}' is already a Journalist.");
             }
 
             this.Journalist = journalist;
