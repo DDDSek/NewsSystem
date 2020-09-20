@@ -7,7 +7,6 @@
 
     using Common;
     using Common.Contracts;
-
     using Application.ArticleCreation.Journalists;
 
     public class EditJournalistCommand : EntityCommand<int>, IRequest<Result>

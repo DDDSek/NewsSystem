@@ -9,7 +9,7 @@
     using Domain.ArticleCreation.Models.Articles;
     using Domain.ArticleCreation.Models.Journalists;
 
-    public interface IArticleCreateDbContext : IDbContext
+    public interface IArticleCreationDbContext : IDbContext
     {
         DbSet<Article> Articles { get; }
 

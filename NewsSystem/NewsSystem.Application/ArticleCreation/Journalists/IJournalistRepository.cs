@@ -4,9 +4,11 @@
     using System.Threading.Tasks;
 
     using Common.Contracts; 
+
+    using Application.ArticleCreation.Journalist.Queries.Details;
+    using Application.ArticleCreation.Journalist.Queries.Common;
+
     using Domain.ArticleCreation.Models.Journalists;
-    using NewsSystem.Application.ArticleCreation.Journalist.Queries.Details;
-    using NewsSystem.Application.ArticleCreation.Journalist.Queries.Common;
 
     public interface IJournalistRepository : IRepository<Journalist>
     {

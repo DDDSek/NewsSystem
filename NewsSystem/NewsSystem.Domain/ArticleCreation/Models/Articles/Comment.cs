@@ -1,11 +1,9 @@
 ﻿namespace NewsSystem.Domain.ArticleCreation.Models.Articles
 {
     using Exceptions;
-
-    using Domain.Common;
     using Domain.Common.Models;
  
-    public class Comment : Entity<int>, IAggregateRoot
+    public class Comment : Entity<int> 
     {
         internal Comment(
             string title,
@@ -40,7 +38,17 @@
 
         public string CreatedBy { get; private set; }
 
-        public int ArticleId { get; private set; } 
+        public int ArticleId { get; private set; }
+
+        public Comment UpdateComment(string title, string content, string createdBy, int articleId)
+        {
+            this.Title = title;
+            this.Content = content;
+            this.CreatedBy = createdBy;
+            this.ArticleId = articleId;
+
+            return this;
+        }
 
         private void Validate(string title, string content, string createdBy, int articleId)
         {

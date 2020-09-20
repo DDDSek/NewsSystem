@@ -13,8 +13,6 @@
             : base(email)
             => this.Email = email;
 
-        public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly();
-
         public Journalist? Journalist { get; private set; }
 
         public void BecomeJournalist(Journalist journalist)

@@ -1,11 +1,12 @@
 ﻿namespace NewsSystem.Domain.ArticleCreation.Models.Articles
-{ 
+{
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
     using Common;
     using Exceptions;
-    using NewsSystem.Domain.Common.Models;
+    using Domain.Common.Models;
 
     public class Article : Entity<int>, IAggregateRoot
     {
@@ -29,7 +30,7 @@
             this.ValidateCategory(category);
 
             this.Title = Title;
-            this.Content = content;
+            this.Content = content;   
             this.Category = category; 
             this.ImageUrl = imageUrl;
             //this.DateRange = dateRange;
@@ -44,7 +45,6 @@
             string title,
             string content, 
             string imageUrl,
-            //NewsSystem.Common.DateRange dateRange,
             Category category,
             bool isAvailable
             )
@@ -70,6 +70,8 @@
 
         public string ImageUrl { get; private set; }
 
+        public Comment Comment { get; private set; } = default!;
+
         //public DateRange DateRange { get; private set; }
 
         //public Status Status { get; private set; } = Status.Waiting;
@@ -80,17 +82,22 @@
 
         public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly(); 
 
-        //public void AddComment(string title, string content, string userId)
-        //    => this.Comments.Add(new Comment(title, content, userId));
-
         //TO DO: new CommentAddedEvent + Handler
 
-        public void AddComment(Comment comment)
+        public void AddComment(string title, string content, string createdBy, int articleId)
         {
-            this.comments.Add(comment);
+            this.comments.Add(new Comment(title, content, createdBy, articleId));
 
             //this.AddEvent(new CommentAddedEvent());
         }
+
+        //public void UpdateComment(string title, string content, string createdBy, int articleId)
+        //{
+        //    this.comments.
+        //    //this.comments.Add(new Comment(title, content, createdBy, articleId));
+
+        //    //this.AddEvent(new CommentAddedEvent());
+        //}
 
         public Article ChangeAvailability()
         {
@@ -172,6 +179,37 @@
             => Guard.ForValidUrl<InvalidArticleException>(
                 imageUrl,
                 nameof(this.ImageUrl));
+
+        //private void ValidateCommentTitle(string title)
+        //    => Guard.ForStringLength<InvalidCommentException>(
+        //        title,
+        //        ModelConstants.Comment.MinContentLength,
+        //        ModelConstants.Comment.MaxContentLength,
+        //        nameof(this.Content));
+
+        //private void ValidateCommentContent(string content)
+        //    => Guard.ForStringLength<InvalidCommentException>(
+        //        content,
+        //        ModelConstants.Comment.MinContentLength,
+        //        ModelConstants.Comment.MaxContentLength,
+        //        nameof(this.Content));
+
+        //private void ValidateCommentUserId(string userId)
+        //    => Guard.ForStringLength<InvalidCommentException>(
+        //        userId,
+        //        ModelConstants.Comment.MinContentLength,
+        //        ModelConstants.Comment.MaxContentLength,
+        //        nameof(this.Content));
+
+        //private void ValidateCommentArticleId(int articleId)
+        //{
+        //    if (Enumerable.Range(1, Int32.MaxValue).Contains(articleId))
+        //    {
+        //        return;
+        //    }
+
+        //    throw new InvalidCommentException($"'{articleId}' is not a valid articleId. Allowed values are between {Int32.MinValue} & {Int32.MaxValue}.");
+        //} 
 
         private void ValidateCategory(Category category)
         {

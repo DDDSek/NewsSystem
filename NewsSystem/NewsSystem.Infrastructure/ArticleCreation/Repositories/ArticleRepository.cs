@@ -11,7 +11,7 @@
 
     using Common;
     using Common.Persistence;
-
+    using ArticleCreation;
     using Application.ArticleCreation.Articles;
     using Application.ArticleCreation.Articles.Queries.Categories;
     using Application.ArticleCreation.Articles.Queries.Common;
@@ -121,7 +121,7 @@
         private IQueryable<Article> AllAvailable()
             => this
                 .All()
-                .Where(car => car.IsAvailable);
+                .Where(art => art.IsAvailable);
 
         private IQueryable<Article> GetArticlesQuery(
             Specification<Article> articleSpecification,

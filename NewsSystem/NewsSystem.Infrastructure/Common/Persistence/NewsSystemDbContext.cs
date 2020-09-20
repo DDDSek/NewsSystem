@@ -21,7 +21,7 @@
     using Domain.Common.Models;
 
     internal class NewsSystemDbContext : IdentityDbContext<User>,
-        IArticleCreateDbContext,
+        IArticleCreationDbContext,
         IStatisticsDbContext
     {
         private readonly IEventDispatcher eventDispatcher;

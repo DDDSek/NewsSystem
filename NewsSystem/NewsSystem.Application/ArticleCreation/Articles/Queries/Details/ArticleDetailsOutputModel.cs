@@ -1,10 +1,12 @@
 ﻿namespace NewsSystem.Application.ArticleCreation.Articles.Queries.Details
 {
     using AutoMapper;
+
     using Common;
-    using NewsSystem.Application.ArticleCreation.Journalist.Queries.Common;
-    using NewsSystem.Domain.ArticleCreation.Models.Articles;
-    using NewsSystem.Domain.Common.Models;
+    using Application.ArticleCreation.Journalist.Queries.Common;
+
+    using Domain.ArticleCreation.Models.Articles;
+    using Domain.Common.Models;
 
     public class ArticleDetailsOutputModel : ArticleOutputModel
     {

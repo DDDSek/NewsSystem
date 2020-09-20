@@ -27,7 +27,7 @@
             public const int MaxTitleLength = 15;
 
             public const int MinContentLength = 20;
-            public const int MaxContentLength = 1000; 
+            public const int MaxContentLength = 300; 
         }
 
         public class Article

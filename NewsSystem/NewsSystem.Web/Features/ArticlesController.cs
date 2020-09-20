@@ -68,5 +68,11 @@
         public async Task<ActionResult> ChangeAvailability(
             [FromRoute] ChangeAvailabilityCommand query)
             => await this.Send(query);
+
+        [HttpPost]
+        [Authorize]
+        public async Task<ActionResult<CreateCommentOutputModel>> CreateComment(
+            CreateCommentCommand command)
+            => await this.Send(command);
     }
 }

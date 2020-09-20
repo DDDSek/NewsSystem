@@ -11,11 +11,7 @@
 
         IArticleFactory WithCategory(string name, string description);
 
-        IArticleFactory WithCategory(Category category);
-
-        //IArticleFactory WithComment(string title, string content, string createdBy);
-
-        //IArticleFactory AddComment(Comment comment);
+        IArticleFactory WithCategory(Category category); 
 
         IArticleFactory WithImageUrl(string imageUrl);
 
