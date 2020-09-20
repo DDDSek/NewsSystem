@@ -91,6 +91,13 @@
             //this.AddEvent(new CommentAddedEvent());
         }
 
+        public Article UpdateComment(Comment comment)
+        {
+            this.Comment = comment;
+
+            return this;
+        }
+
         //public void UpdateComment(string title, string content, string createdBy, int articleId)
         //{
         //    this.comments.

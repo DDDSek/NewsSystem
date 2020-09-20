@@ -32,7 +32,6 @@
         public async Task<Article> Find(int id, CancellationToken cancellationToken = default)
             => await this
                 .All()
-                .Include(c => c.Comments)
                 .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken = default)
@@ -45,6 +44,24 @@
             }
 
             this.Data.Articles.Remove(article);
+
+            await this.Data.SaveChangesAsync(cancellationToken);
+
+            return true;
+        }
+
+        public async Task<bool> DeleteComment(int Id, int articleId, CancellationToken cancellationToken = default)
+        {
+            var article = await this.Data.Articles.FindAsync(articleId);
+
+            if (article == null)
+            {
+                return false;
+            }
+
+            var comment = article.Comments.Where(c => c.Id == Id).FirstOrDefault();
+
+            this.Data.Comments.Remove(comment);
 
             await this.Data.SaveChangesAsync(cancellationToken);
 
@@ -80,14 +97,6 @@
                 .Data
                 .Categories
                 .FirstOrDefaultAsync(c => c.Id == categoryId, cancellationToken);
-
-        // public async Task<Manufacturer> GetManufacturer(
-        //    string manufacturer,
-        //    CancellationToken cancellationToken = default)
-        //    => await this
-        //        .Data
-        //        .Manufacturers
-        //        .FirstOrDefaultAsync(m => m.Name == manufacturer, cancellationToken);
 
         public async Task<IEnumerable<GetArticleCategoryOutputModel>> GetArticleCategories(
             CancellationToken cancellationToken = default)

@@ -20,6 +20,8 @@
 
         Task<bool> Delete(int id, CancellationToken cancellationToken = default);
 
+        Task<bool> DeleteComment(int articleId, int commentId, CancellationToken cancellationToken = default);
+
         Task<Category> GetCategory(
             int categoryId,
             CancellationToken cancellationToken = default);

@@ -6,15 +6,15 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
-    using NewsSystem.Application.ArticleCreation.Articles.Commands.ChangeAvailability;
-    using NewsSystem.Application.ArticleCreation.Articles.Commands.Create;
-    using NewsSystem.Application.ArticleCreation.Articles.Commands.Delete;
-    using NewsSystem.Application.ArticleCreation.Articles.Commands.Edit;
-    using NewsSystem.Application.ArticleCreation.Articles.Queries.Categories;
-    using NewsSystem.Application.ArticleCreation.Articles.Queries.Details;
-    using NewsSystem.Application.ArticleCreation.Articles.Queries.Mine;
-    using NewsSystem.Application.ArticleCreation.Articles.Queries.Search;
-    using NewsSystem.Application.Common;
+    using Application.ArticleCreation.Articles.Commands.ChangeAvailability;
+    using Application.ArticleCreation.Articles.Commands.Create;
+    using Application.ArticleCreation.Articles.Commands.Delete;
+    using Application.ArticleCreation.Articles.Commands.Edit;
+    using Application.ArticleCreation.Articles.Queries.Categories;
+    using Application.ArticleCreation.Articles.Queries.Details;
+    using Application.ArticleCreation.Articles.Queries.Mine;
+    using Application.ArticleCreation.Articles.Queries.Search;
+    using Application.Common;
 
     public class ArticlesController : ApiController
     {
@@ -35,6 +35,12 @@
             CreateArticleCommand command)
             => await this.Send(command);
 
+        [HttpPost]
+        [Authorize]
+        public async Task<ActionResult<CreateCommentOutputModel>> CreateComment(
+            CreateCommentCommand command)
+            => await this.Send(command);
+
         [HttpPut]
         [Authorize]
         [Route(Id)]
@@ -42,11 +48,25 @@
             int id, EditArticleCommand command)
             => await this.Send(command.SetId(id));
 
+        [HttpPut]
+        [Authorize]
+        [Route(Id)]
+        public async Task<ActionResult> EditComment(
+            int id, EditCommentCommand command)
+            => await this.Send(command.SetId(id));
+
+        [HttpDelete]
+        [Authorize]
+        [Route("Id/commentId")]
+        public async Task<ActionResult> Delete(
+            [FromRoute] DeleteArticleCommand command)
+            => await this.Send(command);
+
         [HttpDelete]
         [Authorize]
         [Route(Id)]
-        public async Task<ActionResult> Delete(
-            [FromRoute] DeleteArticleCommand command)
+        public async Task<ActionResult> DeleteComment(
+            [FromRoute] DeleteCommentCommand command)
             => await this.Send(command);
 
         [HttpGet]
@@ -68,11 +88,5 @@
         public async Task<ActionResult> ChangeAvailability(
             [FromRoute] ChangeAvailabilityCommand query)
             => await this.Send(query);
-
-        [HttpPost]
-        [Authorize]
-        public async Task<ActionResult<CreateCommentOutputModel>> CreateComment(
-            CreateCommentCommand command)
-            => await this.Send(command);
     }
 }

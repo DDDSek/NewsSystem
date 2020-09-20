@@ -7,7 +7,7 @@
 
     using Common;
     using Application.Common.Contracts;
-    using NewsSystem.Application.Common;
+    using Application.Common;
 
     public class EditCommentCommand : CommentCommand<EditCommentCommand>, IRequest<Result>
     { 
@@ -18,8 +18,7 @@
 
             public EditCommentCommandHandler(
                 ICurrentUser currentUser,
-                IArticleRepository articleRepository,
-                ICommentRepository commentRepository
+                IArticleRepository articleRepository 
                 )
             {
                 this.currentUser = currentUser;
@@ -34,14 +33,7 @@
                     request.ArticleId,
                     cancellationToken);
 
-                //var article = await this.articleRepository.Find(
-                //    request.ArticleId,
-                //    cancellationToken);
-
-                var comment = article.Comments.Where(c => c.Id == request.Id);
-
-                article
-                    .UpdateComment(request.Title, request.Content, currentUser.UserId, article.Id);
+                article.Comment.UpdateComment(request.Title, request.Content, currentUser.UserId, request.ArticleId);
 
                 await this.articleRepository.Save(article, cancellationToken);
 

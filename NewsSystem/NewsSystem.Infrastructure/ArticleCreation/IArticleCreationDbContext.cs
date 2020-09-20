@@ -13,7 +13,9 @@
     {
         DbSet<Article> Articles { get; }
 
-        DbSet<Category> Categories { get; } 
+        DbSet<Category> Categories { get; }
+
+        DbSet<Comment> Comments { get; }
 
         DbSet<Journalist> Journalists { get; }
 
