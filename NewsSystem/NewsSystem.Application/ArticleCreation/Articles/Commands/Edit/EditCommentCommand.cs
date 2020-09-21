@@ -29,13 +29,13 @@
                 EditCommentCommand request,
                 CancellationToken cancellationToken)
             {
-                var article = await this.articleRepository.Find(
-                    request.ArticleId,
+                var article = await this.articleRepository.FindComment(
+                    request.Id,
                     cancellationToken);
 
                 article.Comment.UpdateComment(request.Title, request.Content, currentUser.UserId, request.ArticleId);
 
-                await this.articleRepository.Save(article, cancellationToken);
+               await this.articleRepository.Save(article, cancellationToken);
 
                 return Result.Success;
             }

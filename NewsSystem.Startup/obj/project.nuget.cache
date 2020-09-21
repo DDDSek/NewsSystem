@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z6u7cBCOVu5OWv7vjm9a93ZVeEG3Qwb3+wLaI8/wfMDT+V82C/Dx9jQln76ob07lSu23MEOPzTfYkyvMWBpwag==",
+  "dgSpecHash": "UMZmoi2bH6Z2Rr2N40Bdq5P7UpS1ABxIeRV+FySe5kh9Mrf/jT1nbpMYLRatQp1svNFQ/5f/WzH5T6ZeRAeGVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Startup\\NewsSystem.Startup.csproj",
+  "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Startup\\NewsSystem.Startup.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sekul\\.nuget\\packages\\fluentassertions\\5.10.3\\fluentassertions.5.10.3.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\microsoft.aspnetcore.testhost\\3.1.1\\microsoft.aspnetcore.testhost.3.1.1.nupkg.sha512",

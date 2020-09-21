@@ -18,6 +18,8 @@
     {
         Task<Article> Find(int id, CancellationToken cancellationToken = default);
 
+        Task<Article> FindComment(int id, CancellationToken cancellationToken = default);
+
         Task<bool> Delete(int id, CancellationToken cancellationToken = default);
 
         Task<bool> DeleteComment(int articleId, int commentId, CancellationToken cancellationToken = default);

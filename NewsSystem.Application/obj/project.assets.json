@@ -6822,11 +6822,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Application\\NewsSystem.Application.csproj",
+      "projectUniqueName": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Application\\NewsSystem.Application.csproj",
       "projectName": "NewsSystem.Application",
-      "projectPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Application\\NewsSystem.Application.csproj",
+      "projectPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Application\\NewsSystem.Application.csproj",
       "packagesPath": "C:\\Users\\sekul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Application\\obj\\",
+      "outputPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sekul\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6842,8 +6842,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj": {
-              "projectPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj"
+            "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj": {
+              "projectPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj"
             }
           }
         }

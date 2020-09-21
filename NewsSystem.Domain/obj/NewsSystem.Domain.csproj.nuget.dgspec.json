@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj": {}
+    "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj": {
+    "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj",
         "projectName": "NewsSystem.Domain",
-        "projectPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj",
+        "projectPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj",
         "packagesPath": "C:\\Users\\sekul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Domain\\obj\\",
+        "outputPath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sekul\\AppData\\Roaming\\NuGet\\NuGet.Config",

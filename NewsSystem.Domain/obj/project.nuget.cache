@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gxnJIkTkwYvq04W2prVtqWB4eLwMIXQKJIocLbRpoJQKy8Tm7PDABSJL/14r9z/5+8FpB/MlS3MDybBezy9G8A==",
+  "dgSpecHash": "B8kUtxY33wsZ0jY1xADVlEM4kPTD3O9UqfXS2pEr5slGnsnJ448ZFJ9XXKHk/cpeCBoaCJ6Ea1Jqri6j3EJBdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj",
+  "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Domain\\NewsSystem.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sekul\\.nuget\\packages\\bogus\\29.0.2\\bogus.29.0.2.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\castle.core\\4.3.1\\castle.core.4.3.1.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g3ML+NQ3zT1qb0wkL0EisCIOQszT6rPA3EfWNBLlmXeqXlpSbX/OrB7FQJsXE5hX9N2WRyZFZbUmsUN31+TEog==",
+  "dgSpecHash": "08gFkr1s5KaxEmSSiTb5jLzbJZheTFJj3Xr/Aj7pCnUmRmZxdrV8mJwT2u3gfIXU2COAjwFM9BmNchK1jlli7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Web\\NewsSystem.Web.csproj",
+  "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem.Web\\NewsSystem.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sekul\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

@@ -34,6 +34,12 @@
                 .All()
                 .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
+        public async Task<Article> FindComment(int id, CancellationToken cancellationToken = default)
+            => await this
+                .All()
+                .Where(c => c.Comments.Any(c => c.Id == id))
+                .SingleOrDefaultAsync(c => c.Id == id, cancellationToken);
+
         public async Task<bool> Delete(int id, CancellationToken cancellationToken = default)
         {
             var article = await this.Data.Articles.FindAsync(id);
