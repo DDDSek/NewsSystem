@@ -1,7 +1,7 @@
 ﻿using System;
 namespace NewsSystem.Domain.Statistics.Models
 {
-    using NewsSystem.Domain.Common;
+    using Domain.Common.Models;
 
     public class ArticleView : Entity<int>
     {

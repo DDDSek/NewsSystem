@@ -1,9 +1,10 @@
 ﻿namespace NewsSystem.Domain
 {
-    using Common; 
     using Microsoft.Extensions.DependencyInjection;
-    using Models.Article;
-    using NewsSystem.Domain.Models.CreateArticle.Article;
+
+    using Common;
+
+    using Domain.ArticleCreation.Models.Articles; 
 
     public static class DomainConfiguration
     {
