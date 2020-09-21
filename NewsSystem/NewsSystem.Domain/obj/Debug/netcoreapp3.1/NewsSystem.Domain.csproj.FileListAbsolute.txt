@@ -1,3 +1,4 @@
 C:\Users\sekul\OneDrive\Desktop\DDD\NewsSystem\NewsSystem\NewsSystem.Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.AssemblyInfoInputs.cache
 C:\Users\sekul\OneDrive\Desktop\DDD\NewsSystem\NewsSystem\NewsSystem.Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.AssemblyInfo.cs
 C:\Users\sekul\OneDrive\Desktop\DDD\NewsSystem\NewsSystem\NewsSystem.Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\sekul\OneDrive\Desktop\DDD\NewsSystem\NewsSystem\NewsSystem.Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.csprojAssemblyReference.cache

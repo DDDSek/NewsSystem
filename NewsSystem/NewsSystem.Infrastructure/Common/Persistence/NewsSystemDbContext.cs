@@ -8,12 +8,11 @@
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
-    using Events;
-
     using Identity;
 
+    using Events;
     using Infrastructure.ArticleCreation;
-    using Infrastructure.Statistics;
+    using Infrastructure.Statistics; 
 
     using Domain.Statistics.Models;
     using Domain.ArticleCreation.Models.Articles;
@@ -41,7 +40,7 @@
 
         public DbSet<Category> Categories { get; set; } = default!;
 
-       //  public DbSet<Manufacturer> Manufacturers { get; set; } = default!;
+        public DbSet<Comment> Comments { get; set; } = default!;
 
         public DbSet<Journalist> Journalists { get; set; } = default!;
 

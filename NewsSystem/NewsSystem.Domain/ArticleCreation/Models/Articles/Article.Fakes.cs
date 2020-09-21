@@ -36,8 +36,7 @@
                     .CustomInstantiator(f => new Article(
                         f.Lorem.Letter(60),
                         f.Lorem.Text(),
-                        A.Dummy<Category>(),
-                        new Comment($"Title{id}", $"Content{id}", $"CreatedBy{id}"),
+                        A.Dummy<Category>(), // new Comment($"Title{id}", $"Content{id}", $"CreatedBy{id}", id),
                         f.Image.PicsumUrl(), 
                         A.Dummy<ArticlePriority>(),
                         isAvailable
