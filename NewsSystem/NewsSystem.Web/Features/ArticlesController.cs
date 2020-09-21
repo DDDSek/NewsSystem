@@ -57,14 +57,14 @@
 
         [HttpDelete]
         [Authorize]
-        [Route("Id/commentId")]
+        [Route(Id)]
         public async Task<ActionResult> Delete(
             [FromRoute] DeleteArticleCommand command)
             => await this.Send(command);
 
         [HttpDelete]
         [Authorize]
-        [Route(Id)]
+        [Route("Id/commentId")]
         public async Task<ActionResult> DeleteComment(
             [FromRoute] DeleteCommentCommand command)
             => await this.Send(command);
