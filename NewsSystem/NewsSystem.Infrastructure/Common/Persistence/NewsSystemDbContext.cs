@@ -20,8 +20,8 @@
     using Domain.Common.Models;
 
     internal class NewsSystemDbContext : IdentityDbContext<User>,
-        IArticleCreationDbContext,
-        IStatisticsDbContext
+        IArticleCreationDbContext//,
+       // IStatisticsDbContext
     {
         private readonly IEventDispatcher eventDispatcher;
         private bool eventsDispatched;

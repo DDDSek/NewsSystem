@@ -1,9 +1,9 @@
 ﻿namespace NewsSystem.Web.Services
 {
     using System;
-    using System.Security.Claims;
-    using Application.Contracts;
+    using System.Security.Claims; 
     using Microsoft.AspNetCore.Http;
+    using Application.Common.Contracts;
 
     public class CurrentUserService : ICurrentUser
     {

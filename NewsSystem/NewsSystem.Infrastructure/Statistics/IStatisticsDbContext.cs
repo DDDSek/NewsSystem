@@ -1,7 +1,15 @@
 ﻿namespace NewsSystem.Infrastructure.Statistics
 {
-    public class IStatisticsDbContext
-    {
+    using Microsoft.EntityFrameworkCore;
 
+    using Domain.Statistics.Models;
+    using Common.Persistence;
+
+
+    public interface IStatisticsDbContext : IDbContext
+    {
+        DbSet<Statistics> Statistics { get; }
+
+        DbSet<ArticleView> ArticleViews { get; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿{
   "General": {
-      "WebAssemblyName": "NewsSystem.Startup"
+    "WebAssemblyName": "NewsSystem.Startup"
   },
   "ApplicationSettings": {
     "Secret": "My Fake Secret"

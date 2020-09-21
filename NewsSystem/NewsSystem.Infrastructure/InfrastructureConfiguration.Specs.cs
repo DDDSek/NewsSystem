@@ -1,15 +1,21 @@
 ﻿namespace NewsSystem.Infrastructure
 {
     using System;
-    using System.Reflection; 
-    using AutoMapper; 
-    using FakeItEasy;
-    using FluentAssertions;
+    using System.Reflection;
+    
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
-    using NewsSystem.Application.ArticleCreation.Articles;
-    using NewsSystem.Infrastructure.Common.Persistence;
+
     using Xunit;
+    using FakeItEasy;
+    using FluentAssertions;
+    using AutoMapper;
+    
+    using Application.ArticleCreation.Articles;
+    using Infrastructure.ArticleCreation;
+    using Infrastructure.Common.Persistence;
+
+
 
     public class InfrastructureConfigurationSpecs
     {
@@ -20,7 +26,7 @@
             var serviceCollection = new ServiceCollection()
                 .AddDbContext<NewsSystemDbContext>(opts => opts
                     .UseInMemoryDatabase(Guid.NewGuid().ToString()))
-                .AddTransient(_ => A.Fake<IDealershipDbContext>());
+                .AddTransient(_ => A.Fake<IArticleCreationDbContext>());
 
             // Act
             var services = serviceCollection

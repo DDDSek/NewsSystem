@@ -1,10 +1,10 @@
 ﻿namespace NewsSystem.Web
 {
     using Application.Common;
-    using Application.Contracts;
     using FluentValidation.AspNetCore;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;
+    using NewsSystem.Application.Common.Contracts;
     using Services;
 
     public static class WebConfiguration

@@ -18,6 +18,7 @@
     using Common.Persistence; 
 
     using Statistics;
+    using NewsSystem.Infrastructure.ArticleCreation;
 
     public static class InfrastructureConfiguration
     {
@@ -39,7 +40,7 @@
                         configuration.GetConnectionString("DefaultConnection"),
                         sqlServer => sqlServer
                             .MigrationsAssembly(typeof(NewsSystemDbContext).Assembly.FullName)))
-                .AddScoped<IDealershipDbContext>(provider => provider.GetService<NewsSystemDbContext>())
+                .AddScoped<IArticleCreationDbContext>(provider => provider.GetService<NewsSystemDbContext>())
                 .AddScoped<IStatisticsDbContext>(provider => provider.GetService<NewsSystemDbContext>())
                 .AddTransient<IInitializer, DatabaseInitializer>();
 

@@ -1,17 +1,18 @@
 ﻿namespace NewsSystem.Application.Statistics.Handlers
 {
     using System.Threading.Tasks;
-    using Common;
-    using Domain.Dealerships.Events.Dealers;
 
-    public class CarAdAddedEventHandler : IEventHandler<CarAdAddedEvent>
+    using Common;
+    using Domain.ArticleCreation.Events.Journalists;
+
+    public class ArticleAddedEventHandler : IEventHandler<ArticleAddedEvent>
     {
         private readonly IStatisticsRepository statistics;
 
-        public CarAdAddedEventHandler(IStatisticsRepository statistics)
+        public ArticleAddedEventHandler(IStatisticsRepository statistics)
             => this.statistics = statistics;
 
-        public Task Handle(CarAdAddedEvent domainEvent)
+        public Task Handle(ArticleAddedEvent domainEvent)
             => this.statistics.IncrementCarAds();
     }
 }

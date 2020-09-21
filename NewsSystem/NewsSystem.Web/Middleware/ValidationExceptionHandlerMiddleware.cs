@@ -3,12 +3,15 @@
     using System;
     using System.Net;
     using System.Threading.Tasks;
-    using Application.Exceptions;
-    using Domain.Exceptions;
+    
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;
+
     using Newtonsoft.Json;
     using Newtonsoft.Json.Serialization;
+    using NewsSystem.Application.Common.Exceptions;
+
+    using Domain.Exceptions;
 
     public class ValidationExceptionHandlerMiddleware
     {

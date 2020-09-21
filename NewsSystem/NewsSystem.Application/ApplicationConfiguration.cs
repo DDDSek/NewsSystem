@@ -1,11 +1,16 @@
 ﻿namespace NewsSystem.Application
 {
     using System.Reflection;
+
     using AutoMapper;
-    using Behaviours;
-    using MediatR;
+
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+
+    using MediatR;
+
+    using Application.Common;
+    using Application.Common.Behaviours;
 
     public static class ApplicationConfiguration
     {

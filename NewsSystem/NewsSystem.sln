@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsSystem.Infrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsSystem.Application", "NewsSystem.Application\NewsSystem.Application.csproj", "{A5080462-D011-4EEF-B646-9BAB9286AC18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsSystem.Startup", "NewsSystem.Startup\NewsSystem.Startup.csproj", "{F117A9F4-1854-465B-97DF-B784B0565F13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsSystem.Startup", "NewsSystem.Startup\NewsSystem.Startup.csproj", "{F117A9F4-1854-465B-97DF-B784B0565F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsSystem.Web", "NewsSystem.Web\NewsSystem.Web.csproj", "{4CC6EAA8-325F-47C2-9624-709A13305290}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsSystem.Web", "NewsSystem.Web\NewsSystem.Web.csproj", "{4CC6EAA8-325F-47C2-9624-709A13305290}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
