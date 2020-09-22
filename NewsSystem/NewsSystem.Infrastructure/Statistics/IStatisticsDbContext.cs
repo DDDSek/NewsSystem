@@ -5,7 +5,6 @@
     using Domain.Statistics.Models;
     using Common.Persistence;
 
-
     public interface IStatisticsDbContext : IDbContext
     {
         DbSet<Statistics> Statistics { get; }
