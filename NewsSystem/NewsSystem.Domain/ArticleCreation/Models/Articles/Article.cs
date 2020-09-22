@@ -19,10 +19,8 @@
             string title,
             string content,
             Category category, 
-            string imageUrl,
-            //DateRange dateRange,
-            ArticlePriority аrticlePriority,
-            //Status status,
+            string imageUrl, 
+            ArticlePriority аrticlePriority, 
             bool isAvailable
             )
         {
@@ -32,10 +30,8 @@
             this.Title = Title;
             this.Content = content;   
             this.Category = category; 
-            this.ImageUrl = imageUrl;
-            //this.DateRange = dateRange;
-            this.ArticlePriority = аrticlePriority;
-            //this.Status = status;
+            this.ImageUrl = imageUrl; 
+            this.ArticlePriority = аrticlePriority; 
             this.IsAvailable = isAvailable;
 
             this.comments = new HashSet<Comment>();
@@ -51,13 +47,11 @@
         {
             this.Title = title;
             this.Content = content; 
-            this.ImageUrl = imageUrl;
-            //this.DateRange = dateRange;
+            this.ImageUrl = imageUrl; 
             this.Category = category;
             this.IsAvailable = isAvailable;
 
-            this.ArticlePriority = default!;
-            //this.Status = default!;
+            this.ArticlePriority = default!; 
 
             this.comments = new HashSet<Comment>();
         }
@@ -70,25 +64,19 @@
 
         public string ImageUrl { get; private set; }
 
-        public Comment Comment { get; private set; } = default!;
-
-        //public DateRange DateRange { get; private set; }
-
-        //public Status Status { get; private set; } = Status.Waiting;
+        public Comment Comment { get; private set; } = default!; 
 
         public ArticlePriority ArticlePriority { get; private set; } //= ArticlePriority.Daily;
 
         public bool IsAvailable { get; private set; } 
 
-        public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly(); 
-
-        //TO DO: new CommentAddedEvent + Handler
+        public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly();  
 
         public void AddComment(string title, string content, string createdBy, int articleId)
         {
             this.comments.Add(new Comment(title, content, createdBy, articleId));
 
-            //this.AddEvent(new CommentAddedEvent());
+            //TO DO this.AddEvent(new CommentAddedEvent());
         }
 
         public Article UpdateComment(Comment comment)
@@ -96,15 +84,7 @@
             this.Comment = comment;
 
             return this;
-        }
-
-        //public void UpdateComment(string title, string content, string createdBy, int articleId)
-        //{
-        //    this.comments.
-        //    //this.comments.Add(new Comment(title, content, createdBy, articleId));
-
-        //    //this.AddEvent(new CommentAddedEvent());
-        //}
+        } 
 
         public Article ChangeAvailability()
         {
@@ -127,16 +107,7 @@
             this.Content = content;
 
             return this; 
-        }
-
-        //public Article UpdateDateRange(
-        //    DateTime lastModify,
-        //    DateTime deletedOn)
-        //{
-        //    this.DateRange = new DateRange(lastModify, deletedOn);
-
-        //    return this;
-        //}
+        } 
 
         public Article UpdateImageUrl(string imageUrl)
         {
@@ -185,38 +156,7 @@
         private void ValidateImageUrl(string imageUrl)
             => Guard.ForValidUrl<InvalidArticleException>(
                 imageUrl,
-                nameof(this.ImageUrl));
-
-        //private void ValidateCommentTitle(string title)
-        //    => Guard.ForStringLength<InvalidCommentException>(
-        //        title,
-        //        ModelConstants.Comment.MinContentLength,
-        //        ModelConstants.Comment.MaxContentLength,
-        //        nameof(this.Content));
-
-        //private void ValidateCommentContent(string content)
-        //    => Guard.ForStringLength<InvalidCommentException>(
-        //        content,
-        //        ModelConstants.Comment.MinContentLength,
-        //        ModelConstants.Comment.MaxContentLength,
-        //        nameof(this.Content));
-
-        //private void ValidateCommentUserId(string userId)
-        //    => Guard.ForStringLength<InvalidCommentException>(
-        //        userId,
-        //        ModelConstants.Comment.MinContentLength,
-        //        ModelConstants.Comment.MaxContentLength,
-        //        nameof(this.Content));
-
-        //private void ValidateCommentArticleId(int articleId)
-        //{
-        //    if (Enumerable.Range(1, Int32.MaxValue).Contains(articleId))
-        //    {
-        //        return;
-        //    }
-
-        //    throw new InvalidCommentException($"'{articleId}' is not a valid articleId. Allowed values are between {Int32.MinValue} & {Int32.MaxValue}.");
-        //} 
+                nameof(this.ImageUrl)); 
 
         private void ValidateCategory(Category category)
         {

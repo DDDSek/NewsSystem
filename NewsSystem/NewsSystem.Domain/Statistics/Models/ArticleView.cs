@@ -1,5 +1,4 @@
-﻿using System;
-namespace NewsSystem.Domain.Statistics.Models
+﻿namespace NewsSystem.Domain.Statistics.Models
 {
     using Domain.Common.Models;
 

@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+
     using Common;
 
     public class Statistics : IAggregateRoot
@@ -20,7 +21,7 @@
         public IReadOnlyCollection<ArticleView> ArticleViews
             => this.articleViews.ToList().AsReadOnly();
 
-        public void AddCarAd()
+        public void AddArticle()
             => this.TotalArticles++;
 
         public void AddArticleView(int аrticleId, string? userId)

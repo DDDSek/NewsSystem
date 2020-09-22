@@ -6,12 +6,16 @@
 
     using Domain.Exceptions;
     using Domain.ArticleCreation.Models.Journalists;
+    using NewsSystem.Domain.ArticleCreation.Models.Articles;
+    using System.Collections.Generic;
 
     public class User : IdentityUser, IUser
     {
         internal User(string email)
             : base(email)
             => this.Email = email;
+
+        public ICollection<Comment> Comments { get; } = new List<Comment>();
 
         public Journalist? Journalist { get; private set; }
 

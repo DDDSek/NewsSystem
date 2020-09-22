@@ -11,16 +11,16 @@
         public void Configure(EntityTypeBuilder<Journalist> builder)
         {
             builder
-                .HasKey(d => d.Id);
+                .HasKey(j => j.Id);
 
             builder
-                .Property(d => d.Name)
+                .Property(j => j.Name)
                 .IsRequired()
                 .HasMaxLength(ModelConstants.Journalist.MaxNameLength);
 
             builder
                 .OwnsOne(
-                    d => d.PhoneNumber,
+                    j => j.PhoneNumber,
                     p =>
                     {
                         p.WithOwner();
@@ -29,7 +29,7 @@
                     });
 
             builder
-                .HasMany(d => d.Articles)
+                .HasMany(j => j.Articles)
                 .WithOne()
                 .Metadata
                 .PrincipalToDependent
