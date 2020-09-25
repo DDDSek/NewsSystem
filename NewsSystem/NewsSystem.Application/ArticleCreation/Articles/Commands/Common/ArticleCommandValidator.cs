@@ -11,7 +11,7 @@
     public class ArticleCommandValidator<TCommand> : AbstractValidator<ArticleCommand<TCommand>>
         where TCommand : EntityCommand<int>
     {
-        public ArticleCommandValidator(IArticleRepository carAdRepository)
+        public ArticleCommandValidator(IArticleRepository articleRepository)
         {
             this.RuleFor(c => c.Title)
                 .MinimumLength(Domain.ArticleCreation.Models.ModelConstants.Article.MinTitleLength)
@@ -24,7 +24,7 @@
                 .NotEmpty();
 
             this.RuleFor(c => c.Category)
-                .MustAsync(async (category, token) => await carAdRepository
+                .MustAsync(async (category, token) => await articleRepository
                     .GetCategory(category, token) != null)
                 .WithMessage("'{PropertyName}' does not exist.");
 

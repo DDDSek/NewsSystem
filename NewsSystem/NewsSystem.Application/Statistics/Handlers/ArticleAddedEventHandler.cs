@@ -13,6 +13,6 @@
             => this.statistics = statistics;
 
         public Task Handle(ArticleAddedEvent domainEvent)
-            => this.statistics.IncrementCarAds();
+            => this.statistics.IncrementArticles();
     }
 }

@@ -28,8 +28,4 @@
     <ProjectReference Include="..\NewsSystem.Application\NewsSystem.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\Persistence\Migrations\" />
-  </ItemGroup>
-
 </Project>

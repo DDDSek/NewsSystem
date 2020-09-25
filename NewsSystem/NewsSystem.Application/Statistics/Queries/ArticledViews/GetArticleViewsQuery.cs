@@ -1,4 +1,4 @@
-﻿namespace NewsSystem.Application.Statistics.Queries.CarAdViews
+﻿namespace NewsSystem.Application.Statistics.Queries.ArticleViews
 {
     using System.Threading;
     using System.Threading.Tasks;
@@ -6,19 +6,19 @@
 
     public class GetArticleViewsQuery : IRequest<int>
     {
-        public int CarAdId { get; set; }
+        public int ArticleId { get; set; }
 
-        public class GetCarAdViewsQueryHandler : IRequestHandler<GetArticleViewsQuery, int>
+        public class GetArticleViewsQueryHandler : IRequestHandler<GetArticleViewsQuery, int>
         {
             private readonly IStatisticsRepository statistics;
 
-            public GetCarAdViewsQueryHandler(IStatisticsRepository statistics)
+            public GetArticleViewsQueryHandler(IStatisticsRepository statistics)
                 => this.statistics = statistics;
 
             public Task<int> Handle(
                 GetArticleViewsQuery request,
                 CancellationToken cancellationToken)
-                => this.statistics.GetCarAdViews(request.CarAdId, cancellationToken);
+                => this.statistics.GetArticleViews(request.ArticleId, cancellationToken);
         }
     }
 }
