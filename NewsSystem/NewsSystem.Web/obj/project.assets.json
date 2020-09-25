@@ -2078,6 +2078,15 @@
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
         }
       },
+      "xunit.runner.visualstudio/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "15.0.0"
+        },
+        "build": {
+          "build/netcoreapp1.0/_._": {}
+        }
+      },
       "NewsSystem.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2107,7 +2116,8 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.7",
           "Microsoft.NET.Test.Sdk": "16.6.1",
           "Scrutor": "3.2.1",
-          "xunit": "2.4.1"
+          "xunit": "2.4.1",
+          "xunit.runner.visualstudio": "2.4.1"
         },
         "compile": {
           "bin/placeholder/NewsSystem.Domain.dll": {}
@@ -6865,6 +6875,36 @@
         "lib/netstandard1.1/xunit.execution.dotnet.xml",
         "xunit.extensibility.execution.2.4.1.nupkg.sha512",
         "xunit.extensibility.execution.nuspec"
+      ]
+    },
+    "xunit.runner.visualstudio/2.4.1": {
+      "sha512": "mBXd1lp1TQr4to2nFv+c4Tf+RnPoQPKglzwLdbdirOUxRaJsCUNDUx2y7E6j9ajgISlTTp1CydFBZCRCUIrwDg==",
+      "type": "package",
+      "path": "xunit.runner.visualstudio/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/_common/xunit.abstractions.dll",
+        "build/_common/xunit.runner.reporters.net452.dll",
+        "build/_common/xunit.runner.utility.net452.dll",
+        "build/_common/xunit.runner.visualstudio.testadapter.dll",
+        "build/net20/xunit.runner.visualstudio.props",
+        "build/netcoreapp1.0/xunit.abstractions.dll",
+        "build/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll",
+        "build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll",
+        "build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.xml",
+        "build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.deps.json",
+        "build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll",
+        "build/netcoreapp1.0/xunit.runner.visualstudio.props",
+        "build/uap10.0/xunit.runner.reporters.netstandard11.dll",
+        "build/uap10.0/xunit.runner.utility.uwp10.dll",
+        "build/uap10.0/xunit.runner.utility.uwp10.pri",
+        "build/uap10.0/xunit.runner.visualstudio.props",
+        "build/uap10.0/xunit.runner.visualstudio.targets",
+        "build/uap10.0/xunit.runner.visualstudio.uwp.testadapter.dll",
+        "build/uap10.0/xunit.runner.visualstudio.uwp.testadapter.pri",
+        "xunit.runner.visualstudio.2.4.1.nupkg.sha512",
+        "xunit.runner.visualstudio.nuspec"
       ]
     },
     "NewsSystem.Application/1.0.0": {

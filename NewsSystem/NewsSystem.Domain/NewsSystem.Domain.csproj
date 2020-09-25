@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <OutputType>Exe</OutputType>
+	  <LangVersion>8.0</LangVersion>
 	<Nullable>enable</Nullable>
 	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' != 'Release'">
     <PackageReference Include="Bogus" Version="29.0.2" />
     <PackageReference Include="FakeItEasy" Version="6.0.1" />
     <PackageReference Include="FakeItEasy.Analyzer.CSharp" Version="6.0.0" />
@@ -17,14 +17,12 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
     <PackageReference Include="Scrutor" Version="3.2.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Advertisements\Models\" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
+    <PackageReference Include="Scrutor" Version="3.2.1" />
   </ItemGroup>
 
 </Project>

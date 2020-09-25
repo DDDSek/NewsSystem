@@ -10,6 +10,12 @@
             this.UserId = userId;
         }
 
+        private ArticleView()
+        {
+            this.ArticleId = default!;
+            this.UserId = default!;
+        }
+
         public int ArticleId { get; }
 
         public string? UserId { get; }

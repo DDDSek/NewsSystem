@@ -9,7 +9,6 @@
     using Microsoft.EntityFrameworkCore;
 
     using Identity;
-
     using Events;
     using Infrastructure.ArticleCreation;
     using Infrastructure.Statistics; 

@@ -23,19 +23,19 @@
 
         public class Comment
         {
-            public const int MinTitleLength = 5;
-            public const int MaxTitleLength = 15;
+            public const int MinTitleLength = 3;
+            public const int MaxTitleLength = 100;
 
-            public const int MinContentLength = 20;
+            public const int MinContentLength = 10;
             public const int MaxContentLength = 300; 
         }
 
         public class Article
         {
-            public const int MinTitleLength = 5;
-            public const int MaxTitleLength = 60;
+            public const int MinTitleLength = 3;
+            public const int MaxTitleLength = 100;
 
-            public const int MinContentLength = 100;
+            public const int MinContentLength = 10;
             public const int MaxContentLength = 1000;
         }
 
@@ -60,14 +60,6 @@
             public const int MinNumberOfSeats = 2;
             public const int MaxNumberOfSeats = 50;
         }
-
-        public class Admin
-        {
-            public const int MinNameLength = 5;
-            public const int MaxNameLength = 60;
-
-            public const int MinInfoLength = 100;
-            public const int MaxInfoLength = 1000;
-        }
+ 
     }
 }

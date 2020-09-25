@@ -36,16 +36,6 @@
             return this;
         }
 
-        //public IArticleFactory WithComment(string title, string content, string createdBy) //manufacturer
-        //    => this.WithComment(new Comment(title, content, createdBy));
-
-        //public IArticleFactory WithComment(Comment comment)//manufacturer
-        //{
-        //    this.articleComment = comment;
-        //    this.commentSet = true;
-        //    return this;
-        //}
-
         public IArticleFactory WithImageUrl(string imageUrl)
         {
             this.articleImageUrl = imageUrl;

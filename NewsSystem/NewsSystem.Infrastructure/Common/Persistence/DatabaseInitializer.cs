@@ -8,6 +8,7 @@
     using Microsoft.EntityFrameworkCore;
 
     using Domain.Common;
+    using NewsSystem.Infrastructure;
 
     internal class DatabaseInitializer : IInitializer
     {

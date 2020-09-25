@@ -8,17 +8,17 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.IdentityModel.Tokens;
-    using Identity;
-
+ 
     using Application.Common;
     using Application.Common.Contracts;
     using Application.Identity;
 
     using Common.Events;
-    using Common.Persistence; 
+    using Common.Persistence;
 
+    using Identity;
     using Statistics;
-    using NewsSystem.Infrastructure.ArticleCreation;
+    using Infrastructure.ArticleCreation; 
 
     public static class InfrastructureConfiguration
     {

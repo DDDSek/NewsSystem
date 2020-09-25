@@ -3,7 +3,7 @@
     using System.Linq;
 
     using Xunit;
-    using MyTested.AspNetCore.Mvc; 
+    using MyTested.AspNetCore.Mvc;
     using FluentAssertions;
 
     using Application.ArticleCreation.Articles.Queries.Search;

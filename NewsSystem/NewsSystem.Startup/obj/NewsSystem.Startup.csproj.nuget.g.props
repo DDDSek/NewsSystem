@@ -23,5 +23,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\sekul\.nuget\packages\xunit.analyzers\0.10.0</Pkgxunit_analyzers>
     <PkgFakeItEasy_Analyzer_CSharp Condition=" '$(PkgFakeItEasy_Analyzer_CSharp)' == '' ">C:\Users\sekul\.nuget\packages\fakeiteasy.analyzer.csharp\6.0.0</PkgFakeItEasy_Analyzer_CSharp>
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\sekul\.nuget\packages\microsoft.entityframeworkcore.tools\3.1.4</PkgMicrosoft_EntityFrameworkCore_Tools>
   </PropertyGroup>
 </Project>

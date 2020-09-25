@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TnwCyer1wN+uGw8xDwcbUZeK/gbJ4cVQ77cp7JAM9rVXfqAndwr9YjgG8jKxKLxAswVqUeAq9hYKK7gtkYlPPw==",
+  "dgSpecHash": "Ee4FzHZgc1DiiErfbfQK5H0VvAdyRCOQEtR06GyIEhIv+8H8mBqysGWmgfe2yBJ5uGsIQsUM5f00YWyjd1TBKQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Application\\NewsSystem.Application.csproj",
   "expectedPackageFiles": [
@@ -124,6 +124,7 @@
     "C:\\Users\\sekul\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
+    "C:\\Users\\sekul\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.1\\xunit.runner.visualstudio.2.4.1.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []

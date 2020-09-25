@@ -22,7 +22,7 @@
                 .WithOne()
                 .Metadata
                 .PrincipalToDependent
-                .SetField("ArticleViews");
+                .SetField("articleViews");
         }
     }
 }

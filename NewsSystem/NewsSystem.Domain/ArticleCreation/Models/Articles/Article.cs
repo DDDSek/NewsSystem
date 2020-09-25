@@ -1,6 +1,5 @@
 ﻿namespace NewsSystem.Domain.ArticleCreation.Models.Articles
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -41,17 +40,16 @@
             string title,
             string content, 
             string imageUrl,
-            Category category,
             bool isAvailable
             )
         {
             this.Title = title;
             this.Content = content; 
-            this.ImageUrl = imageUrl; 
-            this.Category = category;
+            this.ImageUrl = imageUrl;
             this.IsAvailable = isAvailable;
 
-            this.ArticlePriority = default!; 
+            this.Category = default!;
+            this.ArticlePriority = default!;
 
             this.comments = new HashSet<Comment>();
         }

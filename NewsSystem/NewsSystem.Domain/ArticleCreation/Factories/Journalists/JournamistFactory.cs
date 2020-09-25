@@ -5,8 +5,7 @@
     internal class JournalistFactory : IJournalistFactory
     {
         private string journalistName = default!;
-        private string journalistPhoneNumber = default!;
-        // private Category articleCategory = default!;
+        private string journalistPhoneNumber = default!; 
 
         public IJournalistFactory WithName(string name)
         {

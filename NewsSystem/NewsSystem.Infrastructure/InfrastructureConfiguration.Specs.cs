@@ -2,7 +2,7 @@
 {
     using System;
     using System.Reflection;
-    
+
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +10,7 @@
     using FakeItEasy;
     using FluentAssertions;
     using AutoMapper;
-    
+
     using Application.ArticleCreation.Articles;
     using Infrastructure.ArticleCreation;
     using Infrastructure.Common.Persistence;

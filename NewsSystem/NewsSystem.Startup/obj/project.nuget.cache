@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9rTKL3CjWZyT54/rHuBr5lOGwHPvAZH40nMbWhke4oHbN06qf8U7UMlEiKawcrmgomA4BSygx2LXUinN9Uha8A==",
+  "dgSpecHash": "0fB+HycsSWTvubIYWucLnasBl0Rw7vt1aYd753UROxA3nd7R9cxd0acYtAnpjNIXSYw5ToFiQoVg9qSM1vGm2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\sekul\\OneDrive\\Desktop\\DDD\\NewsSystem\\NewsSystem\\NewsSystem.Startup\\NewsSystem.Startup.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\sekul\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.4\\microsoft.entityframeworkcore.inmemory.3.1.4.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.4\\microsoft.entityframeworkcore.relational.3.1.4.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.4\\microsoft.entityframeworkcore.sqlserver.3.1.4.nupkg.sha512",
+    "C:\\Users\\sekul\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.4\\microsoft.entityframeworkcore.tools.3.1.4.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.4\\microsoft.extensions.caching.abstractions.3.1.4.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.4\\microsoft.extensions.caching.memory.3.1.4.nupkg.sha512",
     "C:\\Users\\sekul\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.4\\microsoft.extensions.configuration.3.1.4.nupkg.sha512",

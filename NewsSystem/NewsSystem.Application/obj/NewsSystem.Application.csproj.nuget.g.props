@@ -13,8 +13,8 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\sekul\.nuget\packages\xunit.analyzers\0.10.0</Pkgxunit_analyzers>
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\sekul\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
+    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\sekul\.nuget\packages\xunit.analyzers\0.10.0</Pkgxunit_analyzers>
     <PkgFakeItEasy_Analyzer_CSharp Condition=" '$(PkgFakeItEasy_Analyzer_CSharp)' == '' ">C:\Users\sekul\.nuget\packages\fakeiteasy.analyzer.csharp\6.0.0</PkgFakeItEasy_Analyzer_CSharp>
   </PropertyGroup>
 </Project>
