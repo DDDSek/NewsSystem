@@ -89,29 +89,24 @@
                 return Result.Failure(System.Array.Empty<string>());
             }
 
-            var roles = await userManager.GetRolesAsync(user);
+            var roles = await roleManager.RoleExistsAsync(Roles.Journalist);
 
-            if (roles.Any())
+            if (roles)
             {
                 return Result.Failure(new string[] { IdentityErrors.AlreadyJournalist });
             }
 
-            // returns 200 OK but in DB nothink:
-            //bool roleExists = await roleManager.RoleExistsAsync(Roles.Journalist);
+            //luje che zapisva uj success 
+            var created = await roleManager.CreateAsync(new IdentityRole(Roles.Journalist));
 
-            //if (roleExists)
-            //{
-            //    return "The role already exists";
-            //}
+            if(!created.Succeeded)
+            {
+                return Result.Failure(new string[] { IdentityErrors.RoleInvalid });
+            }
 
-            //   var role = new IdentityRole();
-            //   role.Name = Roles.Journalist;
-              var result = await roleManager.CreateAsync(new IdentityRole(Roles.Journalist)); 
+            // and here throw: "Role JOURNALIST does not exist."
+            var result = await userManager.AddToRoleAsync(user, Roles.Journalist);  
 
-            //user = await userManager.FindByIdAsync(userId);
-       
-            // var result = await userManager.AddToRoleAsync(user, Roles.Journalist);
-       
             if (!result.Succeeded)
             {
                 return Result.Failure(result.Errors.Select(e => e.Description));
