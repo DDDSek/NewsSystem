@@ -8,14 +8,14 @@
     {
         public int Id { get; private set; }
 
-        public string Name { get; private set; } = default!;
+        public string NickName { get; private set; } = default!;
 
-        //public string PhoneNumber { get; private set; } = default!;
+        public string PhoneNumber { get; private set; } = default!;
 
-        //public virtual void Mapping(Profile mapper)
-        //    => mapper
-        //        .CreateMap<Journalist, JournalistOutputModel>()
-        //        .ForMember(d => d.PhoneNumber, cfg => cfg
-        //            .MapFrom(d => d.PhoneNumber.Number));
+        public virtual void Mapping(Profile mapper)
+            => mapper
+                .CreateMap<Journalist, JournalistOutputModel>()
+                .ForMember(d => d.PhoneNumber, cfg => cfg
+                    .MapFrom(d => d.PhoneNumber.Number));
     }
 }

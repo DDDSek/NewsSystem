@@ -9,11 +9,13 @@
     {
         public int Id { get; private set; } 
 
-        public string Model { get; private set; } = default!;
+        public string Title { get; private set; } = default!;
+
+        public string Content { get; private set; } = default!;
+
+        public string Category { get; private set; } = default!;
 
         public string ImageUrl { get; private set; } = default!;
-
-        public string Category { get; private set; } = default!; 
 
         public virtual void Mapping(Profile mapper) 
             => mapper
