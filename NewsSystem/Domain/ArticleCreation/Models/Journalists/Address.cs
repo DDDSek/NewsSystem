@@ -15,6 +15,11 @@
             this.Value = value;
         }
 
+        private Address()
+        {
+            this.Value = default!;
+        }
+
         public string Value { get; }
 
         public static implicit operator string(Address address)

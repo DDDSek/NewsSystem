@@ -9,23 +9,10 @@
     using Application.Common.Contracts;
     using Application.ArticleCreation.Journalists;
     using Domain.ArticleCreation.Factories.Journalists;
+    using NewsSystem.Application.ArticleCreation.Journalists.Commands.Common;
 
-
-    public class RegisterJournalistCommand : IRequest<Result>
+    public class RegisterJournalistCommand : JournalistCommand<RegisterJournalistCommand>, IRequest<Result>
     {
-        public RegisterJournalistCommand(string address, string phoneNumber)
-        {
-            this.UserId = default!;
-            this.Address = address;
-            this.PhoneNumber = phoneNumber;
-        }
-
-        public string UserId { get; set; }
-
-        public string Address { get; }
-
-        public string PhoneNumber { get; }
-
         public class RegisterJournalistCommandHandler : IRequestHandler<RegisterJournalistCommand, Result>
         {
             private readonly ICurrentUser currentUser;
@@ -45,7 +32,9 @@
                 this.journalistRepository = journalistRepository;
             }
 
-            public async Task<Result> Handle(RegisterJournalistCommand request, CancellationToken cancellationToken)
+            public async Task<Result> Handle(
+                RegisterJournalistCommand request,
+                CancellationToken cancellationToken)
             {
                 var exist = await this.journalistRepository.Existed(this.currentUser.UserId, cancellationToken);
 
@@ -66,6 +55,5 @@
                 return Result.Success;
             }
         }
-
     }
 }

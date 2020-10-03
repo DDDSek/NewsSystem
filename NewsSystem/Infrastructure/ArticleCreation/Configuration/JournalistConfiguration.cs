@@ -15,29 +15,24 @@
 
             builder
                 .Property(j => j.Name)
-                .IsRequired();
+                .IsRequired(); 
 
             builder
-                .HasOne(j => j.Address)
-                .WithMany()
-                .HasForeignKey("AddressId")
-                .OnDelete(DeleteBehavior.Restrict);
+                .OwnsOne(c => c.Address, o =>
+                {
+                    o.WithOwner();
+
+                    o.Property(op => op.Value);  
+                });
+
 
             builder
-                .HasOne(j => j.PhoneNumber)
-                .WithMany()
-                .HasForeignKey("PhoneNumberId")
-                .OnDelete(DeleteBehavior.Restrict);
+                .OwnsOne(c => c.PhoneNumber, o =>
+                {
+                    o.WithOwner();
 
-            //builder
-            //    .OwnsOne(
-            //        d => d.PhoneNumber,
-            //        p =>
-            //        {
-            //            p.WithOwner();
-
-            //            p.Property(pn => pn.Number);
-            //        });
+                    o.Property(op => op.Number);
+                }); 
 
             builder
                 .Property(j => j.UserId)

@@ -19,6 +19,11 @@
             this.Number = number;
         }
 
+        internal PhoneNumber()
+        {
+            this.Number = default!;
+        }
+
         public string Number { get; }
 
         public static implicit operator string(PhoneNumber number) => number.Number;
