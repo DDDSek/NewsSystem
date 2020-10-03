@@ -41,12 +41,12 @@
         public IJournalistFactory WithPhoneNumber(string phoneNumber)
             => this.WithPhoneNumber(new PhoneNumber(phoneNumber));
 
-        public Journalist Build() => new Journalist(this.nickName, this.userId, this.address, this.phoneNumber);
+        public Journalist Build() => new Journalist(this.userId, this.nickName, this.address, this.phoneNumber);
 
-        public Journalist Build(string nickName, string userId, string address, string phoneNumber)
+        public Journalist Build(string userId, string nickName, string address, string phoneNumber)
             => this
-                .WithNickName(nickName)
                 .WithUserId(userId)
+                .WithNickName(nickName)
                 .WithAddress(address)
                 .WithPhoneNumber(phoneNumber)
                 .Build();

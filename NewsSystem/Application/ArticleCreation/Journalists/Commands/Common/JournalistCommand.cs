@@ -1,9 +1,6 @@
 ﻿namespace NewsSystem.Application.ArticleCreation.Journalists.Commands.Common
 {
-    using NewsSystem.Application.Common;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+    using NewsSystem.Application.Common; 
 
     public abstract class JournalistCommand<TCommand> : EntityCommand<int>
         where TCommand : EntityCommand<int>

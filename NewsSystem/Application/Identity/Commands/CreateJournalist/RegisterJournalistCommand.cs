@@ -43,8 +43,11 @@
                     return "The journalist already existing with this account!";
                 }
 
+                var opppa = currentUser.UserId;
+
                 var journalist = this.journalistFactory
                     .WithUserId(this.currentUser.UserId)
+                    .WithNickName(request.NickName)
                     .WithAddress(request.Address)
                     .WithPhoneNumber(request.PhoneNumber)
                     .Build();
