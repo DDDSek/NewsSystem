@@ -79,8 +79,7 @@
             CancellationToken cancellationToken = default)
         {
             var journalist = await this
-                .Data
-                .Journalists
+                .All()
                 .Where(u => u.UserId == userId)
                 .FirstOrDefaultAsync(cancellationToken);
 

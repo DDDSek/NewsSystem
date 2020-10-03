@@ -9,10 +9,6 @@
 
     public class ArticleDetailsOutputModel : ArticleOutputModel
     {
-        public bool HasClimateControl { get; private set; }
-
-        public int NumberOfSeats { get; private set; } 
-
         public JournalistOutputModel Journalist { get; set; } = default!;
 
         public override void Mapping(Profile mapper)
