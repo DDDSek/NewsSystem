@@ -38,9 +38,9 @@
                 CreateArticleCommand request,
                 CancellationToken cancellationToken)
             {
-                //var journalist = await this.journalistRepository.FindByUser(
-                //    this.currentUser.UserId,
-                //    cancellationToken);
+                var journalist = await this.journalistRepository.FindByUserId(
+                    this.currentUser.UserId,
+                    cancellationToken);
 
                 var category = await this.articleRepository.GetCategory(
                     request.Category,
@@ -51,9 +51,10 @@
                     .WithContent(request.Content)
                     .WithCategory(category)
                     .WithImageUrl(request.ImageUrl)
+                    .WithJournalist(journalist.Id)
                     .Build();
 
-               // journalist.AddArticle(article);
+                //journalist.AddArticle(article);
 
                 await this.articleRepository.Save(article, cancellationToken);
 

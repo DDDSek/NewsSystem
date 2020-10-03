@@ -11,6 +11,7 @@
     using Application.Identity.Commands.ChangePassword;
     using Application.Identity.Commands.LoginUser; 
     using static Infrastructure.Common.ConstantsInfrastructure;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
     internal class IdentityService : IIdentity
     {
@@ -96,7 +97,7 @@
                 return Result.Failure(new string[] { IdentityErrors.AlreadyJournalist });
             }
 
-            //luje che zapisva uj success 
+            //luje che zapisva uj IdentityResult.Success 
             var created = await roleManager.CreateAsync(new IdentityRole(Roles.Journalist));
 
             if(!created.Succeeded)
@@ -105,12 +106,12 @@
             }
 
             // and here throw: "Role JOURNALIST does not exist."
-            var result = await userManager.AddToRoleAsync(user, Roles.Journalist);  
+            //var result = await userManager.AddToRoleAsync(user, Roles.Journalist);  
 
-            if (!result.Succeeded)
-            {
-                return Result.Failure(result.Errors.Select(e => e.Description));
-            }
+            //if (!result.Succeeded)
+            //{
+            //    return Result.Failure(result.Errors.Select(e => e.Description));
+            //}
 
             return Result.Success;
         }

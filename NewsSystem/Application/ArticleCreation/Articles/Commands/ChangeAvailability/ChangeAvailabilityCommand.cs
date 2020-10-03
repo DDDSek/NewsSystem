@@ -43,7 +43,7 @@
                 var article = await this.articleRepository
                     .Find(request.Id, cancellationToken);
 
-                article.ChangeAvailability();
+                //article.ChangeAvailability();
 
                 await this.articleRepository.Save(article, cancellationToken);
 

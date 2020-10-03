@@ -30,6 +30,7 @@
             [FromRoute] ArticleDetailsQuery query)
             => await this.Send(query);
 
+
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<CreateArticleOutputModel>> Create(
@@ -38,8 +39,8 @@
 
         //[HttpPost]
         //[Authorize]
-        //public async Task<ActionResult<CreateArticleOutputModel>> CreateComment(
-        //    CreateArticleCommand command)
+        //public async Task<ActionResult<CreateCommentOutputModel>> CreateComment(
+        //    CreateCommentCommand command)
         //    => await this.Send(command);
 
         [HttpPut]

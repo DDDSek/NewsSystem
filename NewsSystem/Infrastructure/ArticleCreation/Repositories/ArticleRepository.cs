@@ -87,12 +87,12 @@
                     .Sort(articlesSortOrder))
                 .ToListAsync(cancellationToken))
                 .Skip(skip)
-                .Take(take); // EF Core bug forces me to execute paging on the client.
+                .Take(take);
 
         public async Task<ArticleDetailsOutputModel> GetDetails(int id, CancellationToken cancellationToken = default)
             => await this.mapper
                 .ProjectTo<ArticleDetailsOutputModel>(this
-                    .AllAvailable()
+                    .All()
                     .Where(c => c.Id == id))
                 .FirstOrDefaultAsync(cancellationToken);
 
@@ -111,7 +111,7 @@
                 .ProjectTo<GetArticleCategoryOutputModel>(this.Data.Categories)
                 .ToDictionaryAsync(k => k.Id, cancellationToken);
 
-            var articlesPerCategory = await this.AllAvailable()
+            var articlesPerCategory = await this.All()
                 .GroupBy(c => c.Category.Id)
                 .Select(gr => new
                 {
@@ -133,10 +133,10 @@
                 .GetArticlesQuery(articleSpecification, journalistSpecification)
                 .CountAsync(cancellationToken);
 
-        private IQueryable<Article> AllAvailable()
-            => this
-                .All()
-                .Where(art => art.IsAvailable);
+        //private IQueryable<Article> AllAvailable()
+        //    => this
+        //        .All()
+        //        .Where(art => art.IsAvailable);
 
         private IQueryable<Article> GetArticlesQuery(
             Specification<Article> articleSpecification,

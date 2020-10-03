@@ -14,5 +14,7 @@
         IArticleFactory WithCategory(Category category);
 
         IArticleFactory WithImageUrl(string imageUrl);
+
+        IArticleFactory WithJournalist(int Id);
     }
 }

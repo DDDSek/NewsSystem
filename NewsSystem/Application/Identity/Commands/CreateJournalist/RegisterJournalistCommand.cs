@@ -15,9 +15,12 @@
     {
         public RegisterJournalistCommand(string address, string phoneNumber)
         {
+            this.UserId = default!;
             this.Address = address;
             this.PhoneNumber = phoneNumber;
         }
+
+        public string UserId { get; set; }
 
         public string Address { get; }
 
@@ -52,10 +55,9 @@
                 }
 
                 var journalist = this.journalistFactory
-                    .WithName(this.currentUser.UserName)
                     .WithUserId(this.currentUser.UserId)
-                    .WithPhoneNumber(request.PhoneNumber)
                     .WithAddress(request.Address)
+                    .WithPhoneNumber(request.PhoneNumber)
                     .Build();
 
                 await this.journalistRepository.Save(journalist, cancellationToken: cancellationToken);

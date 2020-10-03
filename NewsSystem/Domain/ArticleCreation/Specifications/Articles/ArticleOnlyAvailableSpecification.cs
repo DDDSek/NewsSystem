@@ -15,10 +15,10 @@
 
         public override Expression<Func<Article, bool>> ToExpression()
         {
-            if (this.onlyAvailable)
-            {
-                return article => article.IsAvailable;
-            }
+            //if (this.onlyAvailable)
+            //{
+            //    return article => article.IsAvailable;
+            //}
 
             return article => true;
         }

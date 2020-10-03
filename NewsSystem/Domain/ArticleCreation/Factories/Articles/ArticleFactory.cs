@@ -9,8 +9,7 @@
         private string articleContent = default!;
         private Category articleCategory = default!;
         private string articleImageUrl = default!;
-
-        private bool categorySet = false;
+        private int journalistId = default!; 
 
         public IArticleFactory WithTitle(string title)
         {
@@ -29,8 +28,7 @@
 
         public IArticleFactory WithCategory(Category category)
         {
-            this.articleCategory = category;
-            this.categorySet = true;
+            this.articleCategory = category; 
             return this;
         }
 
@@ -40,19 +38,21 @@
             return this;
         }
 
-        public Article Build()
+        public IArticleFactory WithJournalist(int journalistId)
         {
-            if (!this.categorySet)
-            {
-                throw new InvalidArticleException("Category  must have a value.");
-            }
+            this.journalistId = journalistId;
+            return this;
+        }
 
+        public Article Build()
+        {  
             return new Article(
                 this.articleTitle,
                 this.articleContent,
                 this.articleCategory,
                 this.articleImageUrl,
-                true);
+                this.journalistId
+                );
         }
     }
 }

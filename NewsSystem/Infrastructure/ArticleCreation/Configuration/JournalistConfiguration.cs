@@ -17,6 +17,18 @@
                 .Property(j => j.Name)
                 .IsRequired();
 
+            builder
+                .HasOne(j => j.Address)
+                .WithMany()
+                .HasForeignKey("AddressId")
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder
+                .HasOne(j => j.PhoneNumber)
+                .WithMany()
+                .HasForeignKey("PhoneNumberId")
+                .OnDelete(DeleteBehavior.Restrict);
+
             //builder
             //    .OwnsOne(
             //        d => d.PhoneNumber,

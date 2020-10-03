@@ -64,7 +64,7 @@
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
                 })
-                .AddEntityFrameworkStores<NewsDbContext>();
+                .AddEntityFrameworkStores<NewsDbContext>(); 
 
             var secret = configuration
                 .GetSection(nameof(ApplicationSettings))

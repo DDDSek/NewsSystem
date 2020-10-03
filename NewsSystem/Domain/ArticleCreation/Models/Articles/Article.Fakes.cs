@@ -38,7 +38,7 @@
                         f.Lorem.Text(),
                         A.Dummy<Category>(), // new Comment($"Title{id}", $"Content{id}", $"CreatedBy{id}", id),
                         f.Image.PicsumUrl(),
-                        isAvailable
+                        f.Random.Int()
                         ))
                     .Generate()
                     .SetId(id);

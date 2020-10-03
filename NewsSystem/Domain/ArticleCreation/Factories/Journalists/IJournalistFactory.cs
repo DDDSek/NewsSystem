@@ -7,8 +7,6 @@
     {
         IJournalistFactory WithUserId(string userId);
 
-        IJournalistFactory WithName(string name);
-
         IJournalistFactory WithAddress(Address address);
 
         IJournalistFactory WithAddress(string address);

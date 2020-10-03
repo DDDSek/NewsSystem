@@ -19,7 +19,7 @@
             string content,
             Category category,
             string imageUrl,
-            bool isAvailable
+            int journalistId
             )
         {
             this.Validate(title, imageUrl, content);
@@ -29,7 +29,7 @@
             this.Content = content;
             this.Category = category;
             this.ImageUrl = imageUrl;
-            this.IsAvailable = isAvailable;
+            this.JournalistId = journalistId;
 
             this.comments = new HashSet<Comment>();
         }
@@ -38,13 +38,13 @@
             string title,
             string content,
             string imageUrl,
-            bool isAvailable
+            int journalistId
             )
         {
             this.Title = title;
             this.Content = content;
             this.ImageUrl = imageUrl;
-            this.IsAvailable = isAvailable;
+            this.JournalistId = journalistId;
 
             this.Category = default!;
 
@@ -59,9 +59,9 @@
 
         public string ImageUrl { get; private set; }
 
-        public Comment Comment { get; private set; } = default!;
+        public int JournalistId { get; set; }
 
-        public bool IsAvailable { get; private set; }
+        public Comment Comment { get; private set; } = default!; 
 
         public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly();
 
@@ -79,12 +79,12 @@
             return this;
         }
 
-        public Article ChangeAvailability()
-        {
-            this.IsAvailable = !this.IsAvailable;
+        //public Article ChangeAvailability()
+        //{
+        //    this.IsAvailable = !this.IsAvailable;
 
-            return this;
-        }
+        //    return this;
+        //}
 
         public Article UpdateTitle(string title)
         {

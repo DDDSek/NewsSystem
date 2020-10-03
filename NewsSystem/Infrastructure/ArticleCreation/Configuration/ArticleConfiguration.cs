@@ -28,10 +28,10 @@
             builder
                 .Property(a => a.ImageUrl)
                 .IsRequired()
-                .HasMaxLength(MaxUrlLength);
+                .HasMaxLength(MaxUrlLength); 
 
             builder
-                .Property(a => a.IsAvailable)
+                .Property(a => a.JournalistId)
                 .IsRequired();
 
             builder

@@ -16,6 +16,9 @@
 
     using Domain.ArticleCreation.Factories.Journalists;
     using Domain.ArticleCreation.Models.Journalists;
+    using NewsSystem.Domain.ArticleCreation.Exceptions;
+    using NewsSystem.Infrastructure.Identity;
+    using NewsSystem.Application.Identity;
 
     internal class JournalistRepository : DataRepository<IArticleCreationDbContext, Journalist>, IJournalistRepository
     {
@@ -59,17 +62,34 @@
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.UserId == userId, cancellationToken);
 
-            if (journalist is null)
+            //if (journalist is null)
+            //{
+            //    return null!;
+            //} 
+
+            //var factory = this.journalistFactory
+            //    .WithUserId(journalist.UserId);
+
+
+            return journalist;
+        }
+
+        public async Task<Journalist> FindByUserId(
+            string userId,
+            CancellationToken cancellationToken = default)
+        {
+            var journalist = await this
+                .Data
+                .Journalists
+                .Where(u => u.UserId == userId)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (journalist == null)
             {
-                return null!;
-            } 
+                throw new InvalidUserExceptions("This user was not found");
+            }
 
-            var factory = this.journalistFactory
-                .WithName(journalist.Name) 
-                .WithUserId(journalist.UserId);
-
-
-            return factory.Build();
+            return journalist;
         }
 
         public async Task<bool> Existed(string userId, CancellationToken cancellationToken = default)
