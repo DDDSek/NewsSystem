@@ -68,7 +68,7 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
+                    NickName = table.Column<string>(nullable: false),
                     Address_Value = table.Column<string>(nullable: true),
                     PhoneNumber_Number = table.Column<string>(nullable: true)
                 },

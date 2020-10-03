@@ -10,6 +10,8 @@
     {
         public string UserId { get; set; } = default!;
 
+        public string NickName { get; set; } = default!;
+
         public string Address { get; set; } = default!;
 
         public string PhoneNumber { get; set; } = default!;

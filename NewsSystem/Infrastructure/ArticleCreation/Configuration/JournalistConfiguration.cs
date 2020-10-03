@@ -14,7 +14,7 @@
                 .HasKey(j => j.Id);
 
             builder
-                .Property(j => j.Name)
+                .Property(j => j.NickName)
                 .IsRequired(); 
 
             builder

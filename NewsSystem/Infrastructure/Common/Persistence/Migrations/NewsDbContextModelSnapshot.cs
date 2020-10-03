@@ -258,7 +258,7 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NickName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

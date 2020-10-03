@@ -6,7 +6,7 @@
     internal class JournalistFactory : IJournalistFactory
     {
         private string userId = default!;
-        private string name = default!; 
+        private string nickName = default!; 
 
         private Address address = default!;
         private PhoneNumber phoneNumber = default!;  
@@ -17,9 +17,9 @@
             return this;
         }
 
-        public IJournalistFactory WithName(string name)
+        public IJournalistFactory WithNickName(string nickName)
         {
-            this.name = name;
+            this.nickName = nickName;
             return this;
         }
 
@@ -41,14 +41,15 @@
         public IJournalistFactory WithPhoneNumber(string phoneNumber)
             => this.WithPhoneNumber(new PhoneNumber(phoneNumber));
 
-        public Journalist Build() => new Journalist(this.name, this.userId, this.address, this.phoneNumber);
+        public Journalist Build() => new Journalist(this.nickName, this.userId, this.address, this.phoneNumber);
 
-        //public Journalist Build(string name)
-        //    => this
-        //        .WithName(name)
-
-        //        .WithPhoneNumber(phoneNumber)
-        //        .Build();
+        public Journalist Build(string nickName, string userId, string address, string phoneNumber)
+            => this
+                .WithNickName(nickName)
+                .WithUserId(userId)
+                .WithAddress(address)
+                .WithPhoneNumber(phoneNumber)
+                .Build();
 
     }
 }

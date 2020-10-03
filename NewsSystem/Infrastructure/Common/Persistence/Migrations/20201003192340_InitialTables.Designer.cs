@@ -10,7 +10,7 @@ using NewsSystem.Infrastructure.Common.Persistence;
 namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
 {
     [DbContext(typeof(NewsDbContext))]
-    [Migration("20201003180548_InitialTables")]
+    [Migration("20201003192340_InitialTables")]
     partial class InitialTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -260,7 +260,7 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NickName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

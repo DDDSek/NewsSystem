@@ -9,6 +9,8 @@
 
         IJournalistFactory WithAddress(Address address);
 
+        IJournalistFactory WithNickName(string nickName);
+
         IJournalistFactory WithAddress(string address);
 
         IJournalistFactory WithPhoneNumber(PhoneNumber phoneNumber);

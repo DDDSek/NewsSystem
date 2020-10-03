@@ -79,7 +79,7 @@
 
             private Specification<Journalist> GetJournalistSpecification(ArticlesQuery request, int? journalistId)
                 => new JournalistByIdSpecification(journalistId)
-                    .And(new JournalistByNameSpecification(request.Journalist));
+                    .And(new JournalistByNickNameSpecification(request.Journalist));
         }
     }
 }

@@ -5,16 +5,16 @@
     using Common;
     using Models.Journalists; 
 
-    public class JournalistByNameSpecification : Specification<Journalist>
+    public class JournalistByNickNameSpecification : Specification<Journalist>
     {
-        private readonly string? name;
+        private readonly string? nickName;
 
-        public JournalistByNameSpecification(string? name) 
-            => this.name = name;
+        public JournalistByNickNameSpecification(string? nickName) 
+            => this.nickName = nickName;
 
-        protected override bool Include => this.name != null;
+        protected override bool Include => this.nickName != null;
 
         public override Expression<Func<Journalist, bool>> ToExpression()
-            => journalist => journalist.Name.ToLower().Contains(this.name!.ToLower());
+            => journalist => journalist.NickName.ToLower().Contains(this.nickName!.ToLower());
     }
 }

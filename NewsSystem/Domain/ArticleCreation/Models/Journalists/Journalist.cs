@@ -19,15 +19,15 @@
 
         internal Journalist(
             string userId, 
-            string name,
+            string nickName,
             Address address,
             PhoneNumber phoneNumber
             )
         {
-            this.Validate(name);
+            this.Validate(nickName);
 
             this.UserId = userId;
-            this.Name = name;
+            this.NickName = nickName;
             this.Address = address;
             this.PhoneNumber = phoneNumber;
 
@@ -37,7 +37,7 @@
         private Journalist(string userId)
         {
             this.UserId = userId;
-            this.Name = default!;
+            this.NickName = default!;
             this.Address = default!;
             this.PhoneNumber = default!;
 
@@ -46,16 +46,16 @@
 
         public string UserId { get; }
 
-        public string Name { get; private set; }
+        public string NickName { get; private set; }
 
         public Address Address { get; }
 
         public PhoneNumber PhoneNumber { get; }
 
-        public Journalist UpdateName(string name)
+        public Journalist UpdateName(string nickName)
         {
-            this.Validate(name);
-            this.Name = name;
+            this.Validate(nickName);
+            this.NickName = nickName;
 
             return this;
         }
@@ -64,11 +64,11 @@
 
         public void AddArticle(Article Article) => this.articles.Add(Article);
 
-        private void Validate(string name)
+        private void Validate(string nickName)
             => Guard.ForStringLength<InvalidJournalistException>(
-                name,
+                nickName,
                 ModelConstants.Journalist.MinNameLength,
                 ModelConstants.Journalist.MaxNameLength,
-                nameof(this.Name));
+                nameof(this.NickName));
     }
 }
