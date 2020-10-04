@@ -54,8 +54,6 @@
                     .WithJournalist(journalist.Id)
                     .Build();
 
-                //journalist.AddArticle(article);
-
                 await this.articleRepository.Save(article, cancellationToken);
 
                 return new CreateArticleOutputModel(article.Id);

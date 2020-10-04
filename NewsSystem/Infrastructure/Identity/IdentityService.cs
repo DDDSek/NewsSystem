@@ -30,7 +30,7 @@
 
         public async Task<Result<IUser>> Register(UserInputModel userInput)
         {
-            var user = new User(userInput.Email, userInput.Name);
+            var user = new User(userInput.Email, userInput.UserName, userInput.PhoneNumber);
 
             var identityResult = await this.userManager.CreateAsync(user, userInput.Password);
 

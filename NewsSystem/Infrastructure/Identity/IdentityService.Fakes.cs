@@ -8,6 +8,7 @@
         public const string TestEmail = "test@test.com";
         public const string ValidPassword = "TestPass";
         public const string UserName = "Bechko";
+        public const string PhoneNumber = "+359899345543";
 
         public static UserManager<User> FakeUserManager
         {
@@ -17,7 +18,7 @@
 
                 A
                     .CallTo(() => userManager.FindByEmailAsync(TestEmail))
-                    .Returns(new User(TestEmail, UserName) { Id = "test" });
+                    .Returns(new User(TestEmail, UserName, PhoneNumber) { Id = "test" });
 
                 A
                     .CallTo(() => userManager.CheckPasswordAsync(A<User>.That.Matches(u => u.Email == TestEmail), ValidPassword))

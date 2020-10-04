@@ -11,11 +11,12 @@
     public class User : IdentityUser, IUser
     { 
         private readonly HashSet<Comment> comments;
-        internal User(string email, string userName)
+        internal User(string email, string userName, string phoneNumber)
             : base(email)
         {
             base.Email = email;
             base.UserName = userName;
+            base.PhoneNumber = phoneNumber;
 
             this.comments = new HashSet<Comment>();
         }

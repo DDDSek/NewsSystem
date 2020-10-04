@@ -9,9 +9,7 @@
     using NewsSystem.Application.Identity;
 
     public class CreateUserCommand : UserInputModel, IRequest<Result>
-    {
-        public string PhoneNumber { get; set; } = default!;
-
+    {  
         public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Result>
         {
             private readonly IIdentity identity;

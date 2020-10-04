@@ -12,7 +12,6 @@
     using Application.ArticleCreation.Articles.Commands.Edit;
     using Application.ArticleCreation.Articles.Queries.Categories;
     using Application.ArticleCreation.Articles.Queries.Details;
-    using Application.ArticleCreation.Articles.Queries.Mine;
     using Application.ArticleCreation.Articles.Queries.Search;
 
     public class ArticlesController : ApiController

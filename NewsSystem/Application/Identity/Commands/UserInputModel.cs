@@ -6,6 +6,8 @@
 
         public string Password { get; set; } = default!;
 
-        public string Name { get; set; } = default!;
+        public string UserName { get; set; } = default!;
+
+        public string PhoneNumber { get; set; } = default!;
     }
 }
