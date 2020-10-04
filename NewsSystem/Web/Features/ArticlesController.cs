@@ -35,11 +35,11 @@
             CreateArticleCommand command)
             => await this.Send(command);
 
-        //[HttpPost]
-        //[Authorize]
-        //public async Task<ActionResult<CreateCommentOutputModel>> CreateComment(
-        //    CreateCommentCommand command)
-        //    => await this.Send(command);
+        [HttpPost]
+        [Authorize]
+        public async Task<ActionResult<CreateCommentOutputModel>> CreateComment(
+            CreateCommentCommand command)
+            => await this.Send(command);
 
         [HttpPut]
         [Authorize]
