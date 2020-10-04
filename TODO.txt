@@ -1,0 +1,6 @@
+
+
+
+to add:
+ChangeAvailabilityCommand like carAr
+to finish comments

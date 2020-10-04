@@ -7,7 +7,6 @@
     using Microsoft.AspNetCore.Mvc;
 
     using Application.Common;
-    using Application.ArticleCreation.Articles.Commands.ChangeAvailability;
     using Application.ArticleCreation.Articles.Commands.Create;
     using Application.ArticleCreation.Articles.Commands.Delete;
     using Application.ArticleCreation.Articles.Commands.Edit;
@@ -61,13 +60,6 @@
         [Route(nameof(Categories))]
         public async Task<ActionResult<IEnumerable<GetArticleCategoryOutputModel>>> Categories(
             [FromQuery] GetArticleCategoriesQuery query)
-            => await this.Send(query);
-
-        [HttpPut]
-        [Authorize]
-        [Route(Id + PathSeparator + nameof(ChangeAvailability))]
-        public async Task<ActionResult> ChangeAvailability(
-            [FromRoute] ChangeAvailabilityCommand query)
             => await this.Send(query);
     }
 }

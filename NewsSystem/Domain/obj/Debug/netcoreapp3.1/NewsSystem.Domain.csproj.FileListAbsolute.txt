@@ -315,7 +315,6 @@ C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\bin\Debu
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.csprojAssemblyReference.cache
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.AssemblyInfoInputs.cache
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.AssemblyInfo.cs
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.csproj.CoreCompileInputs.cache
