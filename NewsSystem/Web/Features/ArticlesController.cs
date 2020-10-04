@@ -56,13 +56,6 @@
         public async Task<ActionResult> Delete(
             [FromRoute] DeleteArticleCommand command)
             => await this.Send(command);
-
-        //[HttpGet]
-        //[Authorize]
-        //[Route(nameof(Mine))]
-        //public async Task<ActionResult<MineArticlesOutputModel>> Mine(
-        //    [FromQuery] MineArticlesQuery query)
-        //    => await this.Send(query);
         
         [HttpGet]
         [Route(nameof(Categories))]

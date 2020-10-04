@@ -30,15 +30,17 @@
                 DeleteArticleCommand request, 
                 CancellationToken cancellationToken)
             {
-                //var journalistHasArticle = await this.currentUser.JournalistHasArticle(
-                //    this.journalistRepository,
-                //    request.Id,
-                //    cancellationToken);
+                var jurnalist = await this.journalistRepository.FindByUserId(currentUser.UserId);
 
-                //if (!journalistHasArticle)
-                //{
-                //    return journalistHasArticle;
-                //}
+                var journalistHasArticle = await this.journalistRepository.HasArticle(
+                    jurnalist.Id,
+                    request.Id,
+                    cancellationToken);
+
+                if (!journalistHasArticle)
+                {
+                    return journalistHasArticle;
+                }
 
                 return await this.articleRepository.Delete(
                     request.Id, 

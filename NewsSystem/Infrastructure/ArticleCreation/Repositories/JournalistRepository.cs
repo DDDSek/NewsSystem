@@ -62,14 +62,10 @@
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.UserId == userId, cancellationToken);
 
-            //if (journalist is null)
-            //{
-            //    return null!;
-            //} 
-
-            //var factory = this.journalistFactory
-            //    .WithUserId(journalist.UserId);
-
+            if (journalist is null)
+            {
+                return null!;
+            }
 
             return journalist;
         }
@@ -85,7 +81,7 @@
 
             if (journalist == null)
             {
-                throw new InvalidUserExceptions("This user was not found");
+                throw new InvalidUserExceptions("This journalist was not found");
             }
 
             return journalist;
