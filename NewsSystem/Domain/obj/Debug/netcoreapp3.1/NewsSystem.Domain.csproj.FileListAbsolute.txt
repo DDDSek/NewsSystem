@@ -322,3 +322,4 @@ C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debu
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.dll
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.pdb
 C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.genruntimeconfig.cache
+C:\Users\sekul\OneDrive\Desktop\NewsSystem\NewsSystem\NewsSystem\Domain\obj\Debug\netcoreapp3.1\NewsSystem.Domain.csprojAssemblyReference.cache

@@ -34,6 +34,10 @@
                 .Property(a => a.JournalistId)
                 .IsRequired();
 
+            //builder
+            //    .Property(a => a.CommentId)
+            //    .IsRequired();
+
             builder
                 .HasOne(a => a.Category)
                 .WithMany()
@@ -41,10 +45,13 @@
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasMany(a => a.Comments)
-                .WithOne()
-                .HasForeignKey("CommentId")
-                .OnDelete(DeleteBehavior.Restrict);
+                .Ignore(a => a.Comments);
+            //builder
+            //    .HasMany(a => a.Comments)
+            //    .WithOne() 
+            //    .Metadata
+            //    .PrincipalToDependent
+            //    .SetField("comments");
         }
     }
 }

@@ -59,9 +59,11 @@
 
         public string ImageUrl { get; private set; }
 
-        public int JournalistId { get; set; }
+        public int JournalistId { get; private set; } 
 
-        public Comment Comment { get; private set; } = default!; 
+        //public int CommentId { get; private set; }
+
+        public Comment Comment { get; set; } = default!;
 
         public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly();
 
@@ -78,13 +80,6 @@
 
             return this;
         }
-
-        //public Article ChangeAvailability()
-        //{
-        //    this.IsAvailable = !this.IsAvailable;
-
-        //    return this;
-        //}
 
         public Article UpdateTitle(string title)
         {

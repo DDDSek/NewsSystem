@@ -4,9 +4,8 @@
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
     using Domain.ArticleCreation.Models.Articles;
-
-    using Infrastructure.Identity;
     using static Domain.ArticleCreation.Models.ModelConstants.Comment;
+    using Infrastructure.Identity;
 
     internal class CommentConfiguration : IEntityTypeConfiguration<Comment>
     {
@@ -27,13 +26,15 @@
 
             builder
                 .Property(c => c.CreatedBy)
-                .IsRequired();
+                .IsRequired(); 
 
-            //builder
-            //    .HasOne(typeof(User))
-            //    .WithMany("Comments")
-            //    .HasForeignKey("CreatedBy")
-            //    .OnDelete(DeleteBehavior.Restrict);
+            builder
+                .HasOne(typeof(User))
+                .WithMany("Comments")
+                .HasForeignKey("CreatedBy")
+                .OnDelete(DeleteBehavior.Restrict);
+
+ 
         }
     }
 }

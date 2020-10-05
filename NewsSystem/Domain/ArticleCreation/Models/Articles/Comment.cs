@@ -40,6 +40,8 @@
 
         public int ArticleId { get; private set; }
 
+        public Article Article { get; private set; } = default!;
+
         public Comment UpdateComment(string title, string content, string createdBy, int articleId)
         {
             this.Title = title;

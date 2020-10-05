@@ -19,9 +19,7 @@
             base.PhoneNumber = phoneNumber;
 
             this.comments = new HashSet<Comment>();
-        }
-  
-        public int CommentId { get; private set; } 
+        } 
 
         public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly(); 
     }

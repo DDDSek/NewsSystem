@@ -36,6 +36,7 @@
             => await this.Send(command);
 
         [HttpPost]
+        [Route("Comment")]
         [Authorize]
         public async Task<ActionResult<CreateCommentOutputModel>> CreateComment(
             CreateCommentCommand command)

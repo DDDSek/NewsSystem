@@ -219,9 +219,6 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CommentId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(300)")
@@ -229,24 +226,19 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ArticleId")
                         .IsUnique();
 
-                    b.HasIndex("CommentId");
-
-                    b.HasIndex("UserId");
+                    b.HasIndex("CreatedBy");
 
                     b.ToTable("Comments");
                 });
@@ -319,9 +311,6 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CommentId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -449,21 +438,17 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
 
             modelBuilder.Entity("NewsSystem.Domain.ArticleCreation.Models.Articles.Comment", b =>
                 {
-                    b.HasOne("NewsSystem.Domain.ArticleCreation.Models.Articles.Article", null)
+                    b.HasOne("NewsSystem.Domain.ArticleCreation.Models.Articles.Article", "Article")
                         .WithOne("Comment")
                         .HasForeignKey("NewsSystem.Domain.ArticleCreation.Models.Articles.Comment", "ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NewsSystem.Domain.ArticleCreation.Models.Articles.Article", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("CommentId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("NewsSystem.Infrastructure.Identity.User", null)
                         .WithMany("Comments")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("NewsSystem.Domain.ArticleCreation.Models.Journalists.Journalist", b =>

@@ -39,8 +39,7 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false),
-                    CommentId = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -267,9 +266,7 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     Title = table.Column<string>(maxLength: 100, nullable: false),
                     Content = table.Column<string>(maxLength: 300, nullable: false),
                     CreatedBy = table.Column<string>(nullable: false),
-                    ArticleId = table.Column<int>(nullable: false),
-                    CommentId = table.Column<int>(nullable: false),
-                    UserId = table.Column<string>(nullable: true)
+                    ArticleId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -281,14 +278,8 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Comments_Articles_CommentId",
-                        column: x => x.CommentId,
-                        principalTable: "Articles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Comments_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Comments_AspNetUsers_CreatedBy",
+                        column: x => x.CreatedBy,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -365,14 +356,9 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_CommentId",
+                name: "IX_Comments_CreatedBy",
                 table: "Comments",
-                column: "CommentId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_UserId",
-                table: "Comments",
-                column: "UserId");
+                column: "CreatedBy");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
