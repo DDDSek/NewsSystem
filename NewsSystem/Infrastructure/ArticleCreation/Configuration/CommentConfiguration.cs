@@ -32,9 +32,12 @@
                 .HasOne(typeof(User))
                 .WithMany("Comments")
                 .HasForeignKey("CreatedBy")
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict); 
 
- 
+            builder
+                .HasOne(c => c.Article)
+                .WithMany(c => c.Comments)
+                .HasForeignKey(c => c.ArticleId);
         }
     }
 }

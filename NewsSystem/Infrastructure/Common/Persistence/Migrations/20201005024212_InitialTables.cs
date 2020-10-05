@@ -266,7 +266,8 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     Title = table.Column<string>(maxLength: 100, nullable: false),
                     Content = table.Column<string>(maxLength: 300, nullable: false),
                     CreatedBy = table.Column<string>(nullable: false),
-                    ArticleId = table.Column<int>(nullable: false)
+                    ArticleId = table.Column<int>(nullable: false),
+                    ArticleId1 = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -277,6 +278,12 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                         principalTable: "Articles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Comments_Articles_ArticleId1",
+                        column: x => x.ArticleId1,
+                        principalTable: "Articles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Comments_AspNetUsers_CreatedBy",
                         column: x => x.CreatedBy,
@@ -352,8 +359,14 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_ArticleId",
                 table: "Comments",
-                column: "ArticleId",
-                unique: true);
+                column: "ArticleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_ArticleId1",
+                table: "Comments",
+                column: "ArticleId1",
+                unique: true,
+                filter: "[ArticleId1] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_CreatedBy",

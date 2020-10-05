@@ -10,7 +10,7 @@ using NewsSystem.Infrastructure.Common.Persistence;
 namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
 {
     [DbContext(typeof(NewsDbContext))]
-    [Migration("20201004232653_InitialTables")]
+    [Migration("20201005024212_InitialTables")]
     partial class InitialTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -221,6 +221,9 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ArticleId1")
+                        .HasColumnType("int");
+
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(300)")
@@ -237,8 +240,11 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticleId")
-                        .IsUnique();
+                    b.HasIndex("ArticleId");
+
+                    b.HasIndex("ArticleId1")
+                        .IsUnique()
+                        .HasFilter("[ArticleId1] IS NOT NULL");
 
                     b.HasIndex("CreatedBy");
 
@@ -441,10 +447,14 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
             modelBuilder.Entity("NewsSystem.Domain.ArticleCreation.Models.Articles.Comment", b =>
                 {
                     b.HasOne("NewsSystem.Domain.ArticleCreation.Models.Articles.Article", "Article")
-                        .WithOne("Comment")
-                        .HasForeignKey("NewsSystem.Domain.ArticleCreation.Models.Articles.Comment", "ArticleId")
+                        .WithMany("Comments")
+                        .HasForeignKey("ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("NewsSystem.Domain.ArticleCreation.Models.Articles.Article", null)
+                        .WithOne("Comment")
+                        .HasForeignKey("NewsSystem.Domain.ArticleCreation.Models.Articles.Comment", "ArticleId1");
 
                     b.HasOne("NewsSystem.Infrastructure.Identity.User", null)
                         .WithMany("Comments")

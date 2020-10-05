@@ -44,11 +44,13 @@
                 .HasForeignKey("CategoryId")
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder
-                .Ignore(a => a.Comments);
             //builder
-            //    .HasMany(a => a.Comments)
-            //    .WithOne() 
+            //    .Ignore(a => a.Comments);
+
+            builder
+                .HasMany(a => a.Comments)
+                .WithOne(a => a.Article);
+
             //    .Metadata
             //    .PrincipalToDependent
             //    .SetField("comments");
