@@ -26,13 +26,13 @@
 
             builder
                 .Property(c => c.CreatedBy)
-                .IsRequired(); 
+                .IsRequired();
 
             builder
                 .HasOne(typeof(User))
                 .WithMany("Comments")
                 .HasForeignKey("CreatedBy")
-                .OnDelete(DeleteBehavior.Restrict); 
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder
                 .HasOne(c => c.Article)

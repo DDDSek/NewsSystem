@@ -12,5 +12,7 @@
         public string CreatedBy { get; set; } = default!;
 
         public int ArticleId { get; set; } = default!;
+
+        public int? CommentId { get; set; }
     }
 }

@@ -59,26 +59,15 @@
 
         public string ImageUrl { get; private set; }
 
-        public int JournalistId { get; private set; } 
-
-        //public int CommentId { get; private set; }
-
-        public Comment Comment { get; set; } = default!;
+        public int JournalistId { get; private set; }
 
         public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly();
 
-        public void AddComment(string title, string content, string createdBy, int articleId)
+        public void AddComment(string title, string content, string createdBy, int articleId, int? commentId)
         {
-            this.comments.Add(new Comment(title, content, createdBy, articleId));
+            this.comments.Add(new Comment(title, content, createdBy, articleId, commentId));
 
             //TO DO this.AddEvent(new CommentAddedEvent());
-        }
-
-        public Article UpdateComment(Comment comment)
-        {
-            this.Comment = comment;
-
-            return this;
         }
 
         public Article UpdateTitle(string title)

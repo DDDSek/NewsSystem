@@ -1,10 +1,13 @@
 ﻿namespace NewsSystem.Application.ArticleCreation.Articles.Commands.Create
 {
-    using MediatR; 
-    using Application.ArticleCreation.Articles.Commands.Common;
-    using NewsSystem.Application.Common.Contracts;
     using System.Threading.Tasks;
     using System.Threading;
+    using System.Linq;
+
+    using MediatR;
+
+    using Application.ArticleCreation.Articles.Commands.Common;
+    using NewsSystem.Application.Common.Contracts;
 
     public class CreateCommentCommand : CommentCommand<CreateCommentCommand>, IRequest<CreateCommentOutputModel>
     {
@@ -30,7 +33,7 @@
                 var article = await this.articleRepository.Find(
                     request.ArticleId, cancellationToken);
 
-                article.AddComment(request.Title, request.Content, currentuser.UserId, request.ArticleId);
+                article.AddComment(request.Title, request.Content, currentuser.UserId, request.ArticleId, request.CommentId);
 
                 await this.articleRepository.Save(article, cancellationToken);
 

@@ -219,7 +219,7 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ArticleId1")
+                    b.Property<int?>("CommentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
@@ -239,10 +239,6 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ArticleId");
-
-                    b.HasIndex("ArticleId1")
-                        .IsUnique()
-                        .HasFilter("[ArticleId1] IS NOT NULL");
 
                     b.HasIndex("CreatedBy");
 
@@ -449,10 +445,6 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                         .HasForeignKey("ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("NewsSystem.Domain.ArticleCreation.Models.Articles.Article", null)
-                        .WithOne("Comment")
-                        .HasForeignKey("NewsSystem.Domain.ArticleCreation.Models.Articles.Comment", "ArticleId1");
 
                     b.HasOne("NewsSystem.Infrastructure.Identity.User", null)
                         .WithMany("Comments")

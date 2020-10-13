@@ -10,8 +10,8 @@
         public void EntitiesWithEqualIdsShouldBeEqual()
         {
             // Arrange
-            var first = new Comment("First Title", "First Content", "Createdby Sechko", 1).SetId(1);
-            var second = new Comment("Second Title", "Second Content", "Createdby Bechko", 2).SetId(1);
+            var first = new Comment("First Title", "First Content", "Createdby Sechko", 1, 1).SetId(1);
+            var second = new Comment("Second Title", "Second Content", "Createdby Bechko", 2, 1).SetId(1);
 
             // Act
             var result = first == second;
@@ -24,8 +24,8 @@
         public void EntitiesWithDifferentIdsShouldNotBeEqual()
         {
             // Arrange
-            var first = new Comment("First Title", "First Content", "Createdby Sechko", 1).SetId(1);
-            var second = new Comment("Second Title", "Second Content", "Createdby Bechko", 2).SetId(2);
+            var first = new Comment("First Title", "First Content", "Createdby Sechko", 1, 1).SetId(1);
+            var second = new Comment("Second Title", "Second Content", "Createdby Bechko", 2, 1).SetId(2);
 
             // Act
             var result = first == second;

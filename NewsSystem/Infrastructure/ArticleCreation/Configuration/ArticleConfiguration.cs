@@ -28,15 +28,11 @@
             builder
                 .Property(a => a.ImageUrl)
                 .IsRequired()
-                .HasMaxLength(MaxUrlLength); 
+                .HasMaxLength(MaxUrlLength);
 
             builder
                 .Property(a => a.JournalistId)
                 .IsRequired();
-
-            //builder
-            //    .Property(a => a.CommentId)
-            //    .IsRequired();
 
             builder
                 .HasOne(a => a.Category)
@@ -44,16 +40,9 @@
                 .HasForeignKey("CategoryId")
                 .OnDelete(DeleteBehavior.Restrict);
 
-            //builder
-            //    .Ignore(a => a.Comments);
-
             builder
                 .HasMany(a => a.Comments)
                 .WithOne(a => a.Article);
-
-            //    .Metadata
-            //    .PrincipalToDependent
-            //    .SetField("comments");
         }
     }
 }
