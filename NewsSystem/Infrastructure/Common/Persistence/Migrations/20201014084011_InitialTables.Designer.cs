@@ -10,7 +10,7 @@ using NewsSystem.Infrastructure.Common.Persistence;
 namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
 {
     [DbContext(typeof(NewsDbContext))]
-    [Migration("20201014073015_InitialTables")]
+    [Migration("20201014084011_InitialTables")]
     partial class InitialTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

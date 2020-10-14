@@ -1,10 +1,10 @@
 ﻿namespace NewsSystem.Domain.ArticleCreation.Models.Articles
 {
-    using NewsSystem.Domain.Common.Models;
+    using Domain.ArticleCreation.Exceptions;
+    using Domain.Common.Models;
 
     public class SubComment : Entity<int>
     {
-        //TO DO VALIDATE - COMMENT VALIDATION IN CONSTRUCTOR
         internal SubComment(
             string title,
             string content,
@@ -13,7 +13,7 @@
             int commentId
             )
         {
-            //this.Validate(title, Content);
+            this.Validate(title, content);
 
             this.Title = title;
             this.Content = content;
@@ -49,5 +49,25 @@
         public int ArticleId { get; private set; }
 
         public Article Article { get; private set; } = default!;
+
+        private void Validate(string title, string content)
+        {
+            this.ValidateTitle(title);
+            this.ValidateContent(content); 
+        }
+
+        private void ValidateTitle(string title)
+            => Guard.ForStringLength<InvalidSubCommentException>(
+                title,
+                ModelConstants.SubComment.MinTitleLength,
+                ModelConstants.SubComment.MaxTitleLength,
+                nameof(this.Title));
+
+        private void ValidateContent(string content)
+            => Guard.ForStringLength<InvalidSubCommentException>(
+                content,
+                ModelConstants.SubComment.MinContentLength,
+                ModelConstants.SubComment.MaxContentLength,
+                nameof(this.Content));
     }
 }
