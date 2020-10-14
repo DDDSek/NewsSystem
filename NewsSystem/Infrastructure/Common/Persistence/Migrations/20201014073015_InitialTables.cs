@@ -266,7 +266,6 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     Title = table.Column<string>(maxLength: 100, nullable: false),
                     Content = table.Column<string>(maxLength: 300, nullable: false),
                     CreatedBy = table.Column<string>(nullable: false),
-                    CommentId = table.Column<int>(nullable: true),
                     ArticleId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -282,6 +281,35 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                         name: "FK_Comments_AspNetUsers_CreatedBy",
                         column: x => x.CreatedBy,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubComment",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(maxLength: 100, nullable: false),
+                    Content = table.Column<string>(maxLength: 300, nullable: false),
+                    CreatedBy = table.Column<string>(nullable: false),
+                    CommentId = table.Column<int>(nullable: false),
+                    ArticleId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubComment", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SubComment_Articles_ArticleId",
+                        column: x => x.ArticleId,
+                        principalTable: "Articles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SubComment_Comments_CommentId",
+                        column: x => x.CommentId,
+                        principalTable: "Comments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -359,6 +387,16 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                 name: "IX_Comments_CreatedBy",
                 table: "Comments",
                 column: "CreatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SubComment_ArticleId",
+                table: "SubComment",
+                column: "ArticleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SubComment_CommentId",
+                table: "SubComment",
+                column: "CommentId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -382,13 +420,16 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Comments");
+                name: "SubComment");
 
             migrationBuilder.DropTable(
                 name: "Statistics");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "Articles");

@@ -13,6 +13,7 @@
             = new CategoryData().GetData().Cast<Category>();
 
         private readonly HashSet<Comment> comments;
+        private readonly HashSet<SubComment> subComments;
 
         internal Article(
             string title,
@@ -32,6 +33,7 @@
             this.JournalistId = journalistId;
 
             this.comments = new HashSet<Comment>();
+            this.subComments = new HashSet<SubComment>();
         }
 
         private Article(
@@ -49,6 +51,7 @@
             this.Category = default!;
 
             this.comments = new HashSet<Comment>();
+            this.subComments = new HashSet<SubComment>();
         }
 
         public string Title { get; private set; }
@@ -62,10 +65,18 @@
         public int JournalistId { get; private set; }
 
         public IReadOnlyCollection<Comment> Comments => this.comments.ToList().AsReadOnly();
+        public IReadOnlyCollection<SubComment> SubComments => this.subComments.ToList().AsReadOnly(); //1.
 
-        public void AddComment(string title, string content, string createdBy, int articleId, int? commentId)
+        public void AddComment(string title, string content, string createdBy, int articleId)
         {
-            this.comments.Add(new Comment(title, content, createdBy, articleId, commentId));
+            this.comments.Add(new Comment(title, content, createdBy, articleId));
+
+            //TO DO this.AddEvent(new CommentAddedEvent());
+        }
+
+        public void AddSubComment(string title, string content, string createdBy, int articleId, int commentId)
+        {
+            this.subComments.Add(new SubComment(title, content, createdBy, articleId, commentId));
 
             //TO DO this.AddEvent(new CommentAddedEvent());
         }

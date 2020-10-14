@@ -42,6 +42,13 @@
             CreateCommentCommand command)
             => await this.Send(command);
 
+        [HttpPost]
+        [Route("Subcomment")]
+        [Authorize]
+        public async Task<ActionResult<CreateCommentOutputModel>> SubComment(
+            CreateSubCommentCommand command)
+            => await this.Send(command);
+
         [HttpPut]
         [Authorize]
         [Route(Id)]

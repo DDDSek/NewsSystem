@@ -1,16 +1,20 @@
 ﻿namespace NewsSystem.Domain.ArticleCreation.Models.Articles
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Domain.Common.Models;
     using Domain.Exceptions;
 
     public class Comment : Entity<int>
     {
+        private readonly HashSet<SubComment> subComments;
+
         internal Comment(
             string title,
             string content,
             string createdBy,
-               int articleId,
-               int? commentId
+               int articleId
             )
         {
             this.Validate(title, content, createdBy, articleId);
@@ -19,21 +23,22 @@
             this.Content = content;
             this.CreatedBy = createdBy;
             this.ArticleId = articleId;
-            this.CommentId = commentId;
+
+            this.subComments = new HashSet<SubComment>();
         }
         private Comment(
 
             string content,
             string createdBy,
-               int articleId,
-               int? commentId
+               int articleId
             )
         {
             this.Title = default!;
             this.Content = content;
             this.CreatedBy = createdBy;
             this.ArticleId = articleId;
-            this.CommentId = commentId;
+
+            this.subComments = new HashSet<SubComment>();
         }
 
         public string Title { get; private set; }
@@ -42,11 +47,11 @@
 
         public string CreatedBy { get; private set; }
 
-        public int? CommentId { get; private set; }
+        public int ArticleId { get; private set; } //3.
 
-        public int ArticleId { get; private set; }
+        public Article Article { get; private set; } = default!; //3.
 
-        public Article Article { get; private set; } = default!;
+        public IReadOnlyCollection<SubComment> SubComments => this.subComments.ToList().AsReadOnly();
 
         public Comment UpdateComment(string title, string content, string createdBy, int articleId, int commentId)
         {
@@ -54,7 +59,6 @@
             this.Content = content;
             this.CreatedBy = createdBy;
             this.ArticleId = articleId;
-            this.CommentId = commentId;
 
             return this;
         }

@@ -9,14 +9,14 @@
     using Application.ArticleCreation.Articles.Commands.Common;
     using NewsSystem.Application.Common.Contracts;
 
-    public class CreateCommentCommand : CommentCommand<CreateCommentCommand>, IRequest<CreateCommentOutputModel>
+    public class CreateSubCommentCommand : CommentCommand<CreateSubCommentCommand>, IRequest<CreateCommentOutputModel>
     {
-        public class CreateCommentCommandHandler : IRequestHandler<CreateCommentCommand, CreateCommentOutputModel>
+        public class CreateSubCommentCommandHandler : IRequestHandler<CreateSubCommentCommand, CreateCommentOutputModel>
         {
             private readonly ICurrentUser currentuser;
             private readonly IArticleRepository articleRepository;
 
-            public CreateCommentCommandHandler(
+            public CreateSubCommentCommandHandler(
                 ICurrentUser currentuser,
                 IArticleRepository articleRepository
                 )
@@ -26,14 +26,14 @@
             }
 
             public async Task<CreateCommentOutputModel> Handle(
-                CreateCommentCommand request,
+                CreateSubCommentCommand request,
                 CancellationToken cancellationToken
                 )
             {
                 var article = await this.articleRepository.Find(
                     request.ArticleId, cancellationToken);
 
-                article.AddComment(request.Title, request.Content, currentuser.UserId, request.ArticleId);
+                article.AddSubComment(request.Title, request.Content, currentuser.UserId, request.ArticleId, request.CommentId);
 
                 await this.articleRepository.Save(article, cancellationToken);
 
@@ -43,3 +43,4 @@
         }
     }
 }
+

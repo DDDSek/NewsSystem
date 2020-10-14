@@ -219,9 +219,6 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CommentId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(300)")
@@ -243,6 +240,42 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     b.HasIndex("CreatedBy");
 
                     b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("NewsSystem.Domain.ArticleCreation.Models.Articles.SubComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CommentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(300)")
+                        .HasMaxLength(300);
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.HasIndex("CommentId");
+
+                    b.ToTable("SubComment");
                 });
 
             modelBuilder.Entity("NewsSystem.Domain.ArticleCreation.Models.Journalists.Journalist", b =>
@@ -449,6 +482,21 @@ namespace NewsSystem.Infrastructure.Common.Persistence.Migrations
                     b.HasOne("NewsSystem.Infrastructure.Identity.User", null)
                         .WithMany("Comments")
                         .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("NewsSystem.Domain.ArticleCreation.Models.Articles.SubComment", b =>
+                {
+                    b.HasOne("NewsSystem.Domain.ArticleCreation.Models.Articles.Article", "Article")
+                        .WithMany("SubComments")
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NewsSystem.Domain.ArticleCreation.Models.Articles.Comment", "Comment")
+                        .WithMany("SubComments")
+                        .HasForeignKey("CommentId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
